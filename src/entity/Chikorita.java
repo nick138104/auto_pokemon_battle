@@ -5,8 +5,8 @@ import entity.base.MonsterElement;
 
 public class Chikorita extends Monster{
 
-	public Chikorita(String name, int attack, int lifepoint) {
-		super(name, attack, lifepoint, MonsterElement.PLANT);
+	public Chikorita(String name) {
+		super(name, 3, 5, MonsterElement.PLANT);
 		// TODO Auto-generated constructor stub
 	}
 

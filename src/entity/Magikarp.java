@@ -5,8 +5,8 @@ import entity.base.MonsterElement;
 
 public class Magikarp extends Monster{
 
-	public Magikarp(String name, int attack, int lifepoint) {
-		super(name, attack, lifepoint, MonsterElement.WATER);
+	public Magikarp(String name) {
+		super(name, 0, 6, MonsterElement.WATER);
 		// TODO Auto-generated constructor stub
 	}
 

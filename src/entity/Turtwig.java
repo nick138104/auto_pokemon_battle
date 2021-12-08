@@ -5,8 +5,8 @@ import entity.base.MonsterElement;
 
 public class Turtwig extends Monster{
 
-	public Turtwig(String name, int attack, int lifepoint) {
-		super(name, attack, lifepoint, MonsterElement.PLANT);
+	public Turtwig(String name) {
+		super(name, 5, 7, MonsterElement.PLANT);
 		// TODO Auto-generated constructor stub
 	}
 

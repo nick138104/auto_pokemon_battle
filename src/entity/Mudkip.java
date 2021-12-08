@@ -5,8 +5,8 @@ import entity.base.MonsterElement;
 
 public class Mudkip extends Monster{
 
-	public Mudkip(String name, int attack, int lifepoint) {
-		super(name, attack, lifepoint, MonsterElement.WATER);
+	public Mudkip(String name) {
+		super(name, 4, 6, MonsterElement.WATER);
 		// TODO Auto-generated constructor stub
 	}
 

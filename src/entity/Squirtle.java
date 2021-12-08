@@ -5,8 +5,8 @@ import entity.base.MonsterElement;
 
 public class Squirtle extends Monster {
 
-	public Squirtle(String name, int attack, int lifepoint) {
-		super(name, attack, lifepoint, MonsterElement.WATER);
+	public Squirtle(String name) {
+		super(name, 2, 4, MonsterElement.WATER);
 		// TODO Auto-generated constructor stub
 	}
 

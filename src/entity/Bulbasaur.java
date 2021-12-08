@@ -5,8 +5,8 @@ import entity.base.MonsterElement;
 
 public class Bulbasaur extends Monster{
 
-	public Bulbasaur(String name, int attack, int lifepoint) {
-		super(name, attack, lifepoint, MonsterElement.PLANT);
+	public Bulbasaur(String name) {
+		super(name, 3, 3, MonsterElement.PLANT);
 		// TODO Auto-generated constructor stub
 	}
 	
