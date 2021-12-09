@@ -25,9 +25,7 @@ import javafx.scene.text.Font;
 import javafx.scene.text.FontWeight;
 import javafx.scene.text.Text;
 import javafx.stage.Stage;
-import javafx.scene.media.Media;
 import javafx.scene.media.MediaPlayer;
-import java.io.File;
 
 public class Main extends Application {
 
@@ -46,11 +44,11 @@ public class Main extends Application {
 		}
 
 		Title title = new Title("Auto Pokemon Battle");
-		title.setTranslateX(50);
+		title.setTranslateX(270);
 		title.setTranslateY(200);
 
-		MenuBox vbox = new MenuBox(new MenuItem("NEW GAME"), new MenuItem("HOW TO PLAY"), new MenuItem("EXIT"));
-		vbox.setTranslateX(180);
+		MenuBox vbox = new MenuBox(new MenuItem("PLAY"), new MenuItem("HOW TO PLAY"), new MenuItem("EXIT"));
+		vbox.setTranslateX(410);
 		vbox.setTranslateY(300);
 
 		root.getChildren().addAll(title, vbox);
@@ -61,11 +59,15 @@ public class Main extends Application {
 
 	@Override
 	public void start(Stage primaryStage) throws Exception {
-		String musicFile = "music_menu.mp3";
-
-		Media sound = new Media(new File(musicFile).toURI().toString());
-		MediaPlayer mediaPlayer = new MediaPlayer(sound);
-		mediaPlayer.play();
+		String path = "res/music_menu.mp3";
+		Media media = new Media(new File(path).toURI().toString());
+		MediaPlayer mediaPlayer = new MediaPlayer(media);
+		mediaPlayer.setOnEndOfMedia(new Runnable() {
+			public void run() {
+				mediaPlayer.seek(javafx.util.Duration.ZERO);
+			}
+		});
+		mediaPlayer.setAutoPlay(true);
 		Scene scene = new Scene(createContent());
 		primaryStage.setTitle("Auto_Pokemon_Battle");
 		primaryStage.setResizable(false);
@@ -77,8 +79,10 @@ public class Main extends Application {
 		public Title(String name) {
 
 			Text text = new Text(name);
-			text.setFill(Color.WHITE);
+			text.setFill(Color.BLACK);
 			text.setFont(Font.font("Comic Sans MS", FontWeight.SEMI_BOLD, 50));
+			text.setStroke(Color.BLANCHEDALMOND);
+			text.setStrokeWidth(2);
 
 			setAlignment(Pos.CENTER);
 			getChildren().add(text);
