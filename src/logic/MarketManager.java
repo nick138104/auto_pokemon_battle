@@ -20,6 +20,6 @@ public class MarketManager {
 		Chikorita chikorita = new Chikorita();
 		Chimchar chimcher = new Chimchar();
 		Cyndaquil cyndaquil = new Cyndaquil();
-		Magikarp magikarp = new magikarp();
+		Magikarp magikarp = new Magikarp();
 	}
 }
