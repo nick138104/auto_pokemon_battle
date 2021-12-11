@@ -5,8 +5,8 @@ import entity.base.MonsterElement;
 
 public class Piplup extends Monster{
 
-	public Piplup(String name) {
-		super(name, 6, 6, MonsterElement.WATER);
+	public Piplup() {
+		super("Piplup", 6, 6, MonsterElement.WATER);
 		// TODO Auto-generated constructor stub
 	}
 

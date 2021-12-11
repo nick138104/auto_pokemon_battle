@@ -21,6 +21,5 @@ public class MarketManager {
 		Chimchar chimcher = new Chimchar();
 		Cyndaquil cyndaquil = new Cyndaquil();
 		Magikarp magikarp = new magikarp();
-		Mudkip
 	}
 }

@@ -5,8 +5,8 @@ import entity.base.MonsterElement;
 
 public class Pikachu extends Monster{
 
-	public Pikachu(String name) {
-		super(name, 5, 5, MonsterElement.ELECTRIC);
+	public Pikachu() {
+		super("Piplup", 5, 5, MonsterElement.ELECTRIC);
 		// TODO Auto-generated constructor stub
 	}
 
