@@ -1,5 +1,6 @@
 package entity.base;
 
-public class Gameobject {
+public abstract class Gameobject {
+	
 
 }

@@ -9,5 +9,6 @@ public class Pikachu extends Monster{
 		super("Pikachu", 5, 5, MonsterElement.ELECTRIC);
 		// TODO Auto-generated constructor stub
 	}
+	
 
 }
