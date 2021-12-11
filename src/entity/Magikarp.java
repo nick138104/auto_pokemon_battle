@@ -3,10 +3,10 @@ package entity;
 import entity.base.Monster;
 import entity.base.MonsterElement;
 
-public class Charmander extends Monster {
+public class Magikarp extends Monster{
 
-	public Charmander(String name) {
-		super(name, 4, 2, MonsterElement.FIRE);
+	public Magikarp(String name) {
+		super(name, 0, 6, MonsterElement.WATER);
 		// TODO Auto-generated constructor stub
 	}
 
