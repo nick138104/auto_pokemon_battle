@@ -5,8 +5,8 @@ import entity.base.MonsterElement;
 
 public class Torchic extends Monster{
 
-	public Torchic(String name) {
-		super(name, 5, 5, MonsterElement.FIRE);
+	public Torchic() {
+		super("Torchic", 5, 5, MonsterElement.FIRE);
 		// TODO Auto-generated constructor stub
 	}
 
