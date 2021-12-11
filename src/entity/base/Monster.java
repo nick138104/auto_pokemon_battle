@@ -17,6 +17,7 @@ public abstract class Monster extends Gameobject {
 	
 	public void attack(Monster m) {
 		m.setLifepoint(m.getLifepoint() - this.getAttack());
+		this.setLifepoint(this.getLifepoint() - m.getAttack());
 	}
 
 	public String getName() {
