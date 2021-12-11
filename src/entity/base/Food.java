@@ -1,16 +1,13 @@
-package entity;
+package entity.base;
 
-import entity.base.Item;
-import entity.base.Monster;
+public class Food extends Gameobject {
 
-public class Food extends Item {
-
+	private String name;
 	private int attackBonus;
 	private int lifePointBonus;
 
 	public Food(String name, int attackBonus, int lifePointBonus) {
-		super(name);
-		// TODO Auto-generated constructor stub
+		setName(name);
 		this.attackBonus = attackBonus;
 		this.lifePointBonus = lifePointBonus;
 	}
@@ -34,6 +31,20 @@ public class Food extends Item {
 
 	public void setLifePointBonus(int lifePointBonus) {
 		this.lifePointBonus = lifePointBonus;
+	}
+
+	public String getName() {
+		return name;
+	}
+
+	public void setName(String name) {
+		this.name = name;
+	}
+
+	@Override
+	public String toString() {
+		// TODO Auto-generated method stub
+		return null;
 	}
 
 }

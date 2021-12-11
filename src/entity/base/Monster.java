@@ -1,6 +1,6 @@
 package entity.base;
 
-public abstract class Monster extends Gameobject {
+public class Monster extends Gameobject {
 
 	private String name;
 	private int attack;
@@ -14,7 +14,7 @@ public abstract class Monster extends Gameobject {
 		setLifepoint(lifepoint);
 		setElement(element);
 	}
-	
+
 	public String getName() {
 		return name;
 	}
@@ -45,6 +45,12 @@ public abstract class Monster extends Gameobject {
 
 	public void setElement(MonsterElement element) {
 		this.element = element;
+	}
+
+	@Override
+	public String toString() {
+		// TODO Auto-generated method stub
+		return null;
 	}
 
 }

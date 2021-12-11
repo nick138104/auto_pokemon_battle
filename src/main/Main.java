@@ -1,13 +1,6 @@
 package main;
 
-import gui.MenuBox;
-import gui.MenuItem;
-import gui.Title;
 import javafx.application.Application;
-import javafx.scene.Parent;
-import javafx.scene.Scene;
-import javafx.scene.image.ImageView;
-import javafx.scene.layout.Pane;
 import javafx.scene.media.MediaPlayer;
 import javafx.stage.Stage;
 import resource.RenderableHolder;
