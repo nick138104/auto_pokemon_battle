@@ -15,7 +15,6 @@ import scenepackage.SceneManager;
 
 public class Main extends Application {
 
-	SceneManager sceneManager;
 	public static Stage primaryStage;
 
 	@Override

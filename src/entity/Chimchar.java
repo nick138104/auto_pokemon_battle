@@ -5,8 +5,8 @@ import entity.base.MonsterElement;
 
 public class Chimchar extends Monster{
 
-	public Chimchar(String name) {
-		super(name, 7, 5, MonsterElement.FIRE);
+	public Chimchar() {
+		super("Chimchar", 7, 5, MonsterElement.FIRE);
 		// TODO Auto-generated constructor stub
 	}
 

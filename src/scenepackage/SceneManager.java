@@ -1,6 +1,5 @@
 package scenepackage;
 
-import gui.GameButton;
 import gui.GamePane;
 import gui.MenuBox;
 import gui.MenuItem;
