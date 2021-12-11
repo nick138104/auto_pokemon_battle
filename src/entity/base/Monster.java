@@ -1,6 +1,6 @@
 package entity.base;
 
-public abstract class Monster {
+public abstract class Monster extends Gameobject {
 
 	private String name;
 	private int attack;
