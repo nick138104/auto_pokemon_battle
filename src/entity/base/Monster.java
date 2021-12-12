@@ -14,6 +14,11 @@ public class Monster extends Gameobject {
 		setLifepoint(lifepoint);
 		setElement(element);
 	}
+	
+	public void attack(Monster m) {
+		m.setLifepoint(m.getLifepoint() - this.getAttack());
+		this.setLifepoint(this.getLifepoint() - m.getAttack());
+	}
 
 	public String getName() {
 		return name;
