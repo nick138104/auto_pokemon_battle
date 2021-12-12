@@ -16,7 +16,6 @@ import entity.Torchic;
 import entity.Totodile;
 import entity.Treecko;
 import entity.Turtwig;
-import entity.base.Emptyobject;
 import entity.base.Food;
 import entity.base.Gameobject;
 import entity.base.Monster;
