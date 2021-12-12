@@ -19,7 +19,8 @@ public class GamePane {
 	}
 
 	private void initializestatPane() {
-
+		statPane = new HBox();
+		
 	}
 
 	private void initializegamePane() {
