@@ -4,10 +4,10 @@ import entity.base.Monster;
 import entity.base.MonsterElement;
 import interfacepackage.LevelUpable;
 
-public class Cyndaquil extends Monster implements LevelUpable{
+public class Cyndaquil extends Monster implements LevelUpable {
 
 	public Cyndaquil() {
-		super("Cyndaquil", 5, 3, MonsterElement.FIRE);
+		super("Cyndaquil", 5, 3, MonsterElement.FIRE, 12);
 		// TODO Auto-generated constructor stub
 	}
 
@@ -17,12 +17,12 @@ public class Cyndaquil extends Monster implements LevelUpable{
 			setName("Quilava");
 			setAttack(getAttack() + 2);
 			setLifepoint(getLifepoint() + 3);
+			setId(13);
 		} else if (getName() == "Quilava") {
 			setName("Typhlosion");
 			setAttack(getAttack() + 2);
 			setLifepoint(getLifepoint() + 3);
+			setId(14);
 		}
-		
 	}
-
 }
