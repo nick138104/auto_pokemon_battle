@@ -92,7 +92,10 @@ public class GameButton {
 		playButton.setOnAction(new EventHandler<ActionEvent>() {
 			@Override
 			public void handle(ActionEvent arg0) {
-				// backButtonHandler();
+				Main.primaryStage.setScene(SceneManager.play_scene);
+				RenderableHolder.music.get(0).stop();
+				RenderableHolder.music.get(1).play();
+				RenderableHolder.music.get(1).setCycleCount(MediaPlayer.INDEFINITE);
 			}
 		});
 		buttons.add(playButton);
