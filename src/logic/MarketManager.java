@@ -1,5 +1,6 @@
 package logic;
 
+import java.util.Objects;
 import java.util.Random;
 
 import entity.Bulbasaur;
@@ -16,7 +17,6 @@ import entity.Torchic;
 import entity.Totodile;
 import entity.Treecko;
 import entity.Turtwig;
-import entity.base.Emptyobject;
 import entity.base.Food;
 import entity.base.Gameobject;
 import entity.base.Monster;
@@ -36,6 +36,10 @@ public class MarketManager {
 	public static ObservableList<Gameobject> objects = FXCollections.observableArrayList();
 	public static ObservableList<Button> marketList = FXCollections.observableArrayList();
 	private static Button selectedButton;
+	private static int money;
+	private static int win;
+	private static int life;
+	private static int turn;
 
 	public static void startMarket() {
 		objects.clear();
@@ -119,7 +123,7 @@ public class MarketManager {
 	public static void randomMarket() {
 		Random rand = new Random();
 		for (int i = 0; i < 3; i++) {
-			if (!objects.get(i).isFreez()) {
+			if (Objects.isNull(objects.get(i)) || !objects.get(i).isFreez()) {
 				int mon = rand.nextInt(14);
 				Monster monster;
 				if (mon == 0) {
@@ -201,15 +205,25 @@ public class MarketManager {
 	}
 
 	public static void freezMarket() {
-		// TODO Auto-generated method stub
+		// can throw exception
+		if (Objects.isNull(selectedButton))
+			return;
 		int index = Integer.parseInt(selectedButton.getId());
 		objects.get(index).setFreez(!objects.get(index).isFreez());
-		MarketManager.marketList.get(index).setBackground(new Background(new BackgroundFill(Color.LIGHTBLUE, CornerRadii.EMPTY, Insets.EMPTY)));
+		if (objects.get(index).isFreez()) {
+			MarketManager.marketList.get(index).setBackground(
+					new Background(new BackgroundFill(Color.LIGHTBLUE, CornerRadii.EMPTY, Insets.EMPTY)));
+		} else {
+			MarketManager.marketList.get(index).setBackground(
+					new Background(new BackgroundFill(Color.LIMEGREEN, CornerRadii.EMPTY, Insets.EMPTY)));
+		}
+
 	}
 
 	public static void updateMarket() {
+		selectedButton = null;
 		for (int i = 0; i < 5; i++) {
-			if (!objects.get(i).equals(null)) {
+			if (Objects.nonNull(objects.get(i))) {
 				int pic_num = MarketManager.objects.get(i).getId();
 				ImageView image;
 				if (i < 3) {
@@ -220,7 +234,18 @@ public class MarketManager {
 				image.setFitHeight(48);
 				image.setFitWidth(48);
 				MarketManager.marketList.get(i).setGraphic(image);
+				if (objects.get(i).isFreez()) {
+					MarketManager.marketList.get(i).setBackground(
+							new Background(new BackgroundFill(Color.LIGHTBLUE, CornerRadii.EMPTY, Insets.EMPTY)));
+				} else {
+					MarketManager.marketList.get(i).setBackground(
+							new Background(new BackgroundFill(Color.WHITE, CornerRadii.EMPTY, Insets.EMPTY)));
+				}
 				// setTooltip();
+			} else {
+				MarketManager.marketList.get(i).setGraphic(null);
+				MarketManager.marketList.get(i).setBackground(
+						new Background(new BackgroundFill(Color.WHITE, CornerRadii.EMPTY, Insets.EMPTY)));
 			}
 		}
 	}
