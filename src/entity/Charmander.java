@@ -4,10 +4,10 @@ import entity.base.Monster;
 import entity.base.MonsterElement;
 import interfacepackage.LevelUpable;
 
-public class Charmander extends Monster implements LevelUpable{
+public class Charmander extends Monster implements LevelUpable {
 
 	public Charmander() {
-		super("Charmander", 4, 2, MonsterElement.FIRE);
+		super("Charmander", 4, 2, MonsterElement.FIRE, 3);
 		// TODO Auto-generated constructor stub
 	}
 
@@ -17,13 +17,14 @@ public class Charmander extends Monster implements LevelUpable{
 			setName("Charmeleon");
 			setAttack(getAttack() + 3);
 			setLifepoint(getLifepoint() + 3);
+			setId(4);
 		} else if (getName() == "Charmeleon") {
 			setName("Charlizard");
 			setAttack(getAttack() + 3);
 			setLifepoint(getLifepoint() + 3);
+			setId(5);
 		}
-		
+
 	}
 
-	
 }

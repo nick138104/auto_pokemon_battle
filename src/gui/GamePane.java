@@ -1,34 +1,39 @@
 package gui;
 
-import java.util.ArrayList;
-
 import javafx.scene.control.Button;
-import javafx.scene.layout.HBox;
+import javafx.scene.layout.GridPane;
+import logic.MarketManager;
 
 public class GamePane {
-	HBox statPane;
-	HBox gamePane;
-	HBox monsterPane;
+	GridPane statPane;
+	GridPane gamePane;
+	GridPane monsterPane;
 	GameButton gameButton;
 
 	public GamePane() {
 		gameButton = new GameButton();
+		MarketManager.startMarket();
 		initializestatPane();
-		initializegamePane();
 		initializemonsterPane();
+		initializegamePane();
 	}
 
 	private void initializestatPane() {
-		statPane = new HBox();
-		
+		statPane = new GridPane();
+
 	}
 
 	private void initializegamePane() {
-		gamePane = new HBox();
+		gamePane = new GridPane();
 		gamePane.setPrefSize(200, 600);
-		for (int i = 1; i < gameButton.getButtons().size(); i++) {
-			gamePane.getChildren().add(gameButton.getButtons().get(i));
-		}
+		gamePane.setHgap(1);
+		gamePane.setVgap(10);
+		gamePane.add(gameButton.getButtons().get(1), 0, 0);
+		MarketPane marketPane = new MarketPane();
+		gamePane.add(marketPane, 1, 0);
+		gamePane.add(gameButton.getButtons().get(2), 2, 0);
+		gamePane.add(gameButton.getButtons().get(3), 3, 0);
+		gamePane.add(gameButton.getButtons().get(4), 4, 0);
 		gamePane.setTranslateY(400);
 	}
 
@@ -40,15 +45,15 @@ public class GamePane {
 		return gameButton.getButtons().get(0);
 	}
 
-	public HBox getStatPane() {
+	public GridPane getStatPane() {
 		return statPane;
 	}
 
-	public HBox getGamePane() {
+	public GridPane getGamePane() {
 		return gamePane;
 	}
 
-	public HBox getMonsterPane() {
+	public GridPane getMonsterPane() {
 		return monsterPane;
 	}
 

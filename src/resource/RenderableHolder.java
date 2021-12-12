@@ -36,14 +36,16 @@ public class RenderableHolder {
 		music.add(musicMenu);
 		AudioClip musicFight = new AudioClip(ClassLoader.getSystemResource("music_fight.mp3").toString());
 		music.add(musicFight);
-		AudioClip hitsound = new AudioClip(ClassLoader.getSystemResource("Hit Sound Effect.mp3").toString());
+		AudioClip hitsound = new AudioClip(ClassLoader.getSystemResource("hit_sound.mp3").toString());
 		music.add(hitsound);
-		
+		AudioClip freezsound = new AudioClip(ClassLoader.getSystemResource("freez_sound.mp3").toString());
+		music.add(freezsound);
+
 		Image backgroundMenu = new Image(ClassLoader.getSystemResource("background_menu.png").toString());
 		background.add(backgroundMenu);
 		Image backgroundPlay = new Image(ClassLoader.getSystemResource("background_play.jpg").toString());
 		background.add(backgroundPlay);
-		
+
 		Image bulbasaur1 = new Image(ClassLoader.getSystemResource("Bulbasaur1.png").toString());
 		monster.add(bulbasaur1);
 		Image bulbasaur2 = new Image(ClassLoader.getSystemResource("Bulbasaur2.png").toString());
@@ -56,11 +58,11 @@ public class RenderableHolder {
 		monster.add(charmander2);
 		Image charmander3 = new Image(ClassLoader.getSystemResource("Charmander3.png").toString());
 		monster.add(charmander3);
-		Image chikorita1 = new Image(ClassLoader.getSystemResource("Chokorita1.png").toString());
+		Image chikorita1 = new Image(ClassLoader.getSystemResource("Chikorita1.png").toString());
 		monster.add(chikorita1);
-		Image chikorita2 = new Image(ClassLoader.getSystemResource("Chokorita2.png").toString());
+		Image chikorita2 = new Image(ClassLoader.getSystemResource("Chikorita2.png").toString());
 		monster.add(chikorita2);
-		Image chikorita3 = new Image(ClassLoader.getSystemResource("Chokorita3.png").toString());
+		Image chikorita3 = new Image(ClassLoader.getSystemResource("Chikorita3.png").toString());
 		monster.add(chikorita3);
 		Image chimchar1 = new Image(ClassLoader.getSystemResource("Chimchar1.png").toString());
 		monster.add(chimchar1);
@@ -74,7 +76,7 @@ public class RenderableHolder {
 		monster.add(cyndaquil2);
 		Image cyndaquil3 = new Image(ClassLoader.getSystemResource("Cyndaquil3.png").toString());
 		monster.add(cyndaquil3);
-		Image magikarp1 = new Image(ClassLoader.getSystemResource("Margikarp2.png").toString());
+		Image magikarp1 = new Image(ClassLoader.getSystemResource("Magikarp2.png").toString());
 		monster.add(magikarp1);
 		Image mudkip1 = new Image(ClassLoader.getSystemResource("Mudkip1.png").toString());
 		monster.add(mudkip1);
@@ -120,20 +122,26 @@ public class RenderableHolder {
 		monster.add(turtwig2);
 		Image turtwig3 = new Image(ClassLoader.getSystemResource("Turtwig3.png").toString());
 		monster.add(turtwig3);
-		
-		Image cheri  = new Image(ClassLoader.getSystemResource("Cheri_Berry.png").toString());
-		food.add(cheri);
-		Image chesto  = new Image(ClassLoader.getSystemResource("Chesto_Berry.png").toString());
-		food.add(chesto);
-		Image pecha  = new Image(ClassLoader.getSystemResource("Pecha_Berry.png").toString());
-		food.add(pecha);
-		Image rawst  = new Image(ClassLoader.getSystemResource("Rawst_Berry.png").toString());
-		food.add(rawst);
-		Image aspear  = new Image(ClassLoader.getSystemResource("Aspear_Berry.png").toString());
-		food.add(aspear);
-		Image leppa  = new Image(ClassLoader.getSystemResource("Leppa_Berry.png").toString());
-		food.add(leppa);
-		Image oran  = new Image(ClassLoader.getSystemResource("Oran_Berry.png").toString());
-		food.add(oran);
+
+		/*
+		 * Image cheri = new
+		 * Image(ClassLoader.getSystemResource("Cheri_Berry.png").toString());
+		 * food.add(cheri); Image chesto = new
+		 * Image(ClassLoader.getSystemResource("Chesto_Berry.png").toString());
+		 * food.add(chesto); Image pecha = new
+		 * Image(ClassLoader.getSystemResource("Pecha_Berry.png").toString());
+		 * food.add(pecha); Image rawst = new
+		 * Image(ClassLoader.getSystemResource("Rawst_Berry.png").toString());
+		 * food.add(rawst); Image aspear = new
+		 * Image(ClassLoader.getSystemResource("Aspear_Berry.png").toString());
+		 * food.add(aspear); Image leppa = new
+		 * Image(ClassLoader.getSystemResource("Leppa_Berry.png").toString());
+		 * food.add(leppa); Image oran = new
+		 * Image(ClassLoader.getSystemResource("Oran_Berry.png").toString());
+		 * food.add(oran);
+		 */
+		for (int i = 0; i < 8; i++) {
+			food.add(pikachu1);
+		}
 	}
 }

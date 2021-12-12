@@ -11,6 +11,7 @@ import javafx.scene.shape.Rectangle;
 import javafx.scene.text.Font;
 import javafx.scene.text.FontWeight;
 import javafx.scene.text.Text;
+import logic.MarketManager;
 import main.Main;
 import resource.RenderableHolder;
 import scenepackage.SceneManager;
@@ -44,15 +45,15 @@ public class MenuItem extends StackPane {
 		setOnMouseReleased(event -> {
 			bg.setFill(gradient);
 			if (name.equals("PLAY")) {
-				System.out.println("PLAY SENCE");
 				Main.primaryStage.setScene(SceneManager.game_scene);
+				MarketManager.startMarket();
+				MarketManager.updateMarket();
 				RenderableHolder.music.get(0).stop();
 				RenderableHolder.music.get(0).play(60);
 				RenderableHolder.music.get(0).setCycleCount(MediaPlayer.INDEFINITE);
 			} else if (name.equals("HOW TO PLAY")) {
 				System.out.println("HOW TO PLAY SENCE");
 			} else {
-				System.out.println("EXIT SENCE");
 				Main.primaryStage.close();
 			}
 		});

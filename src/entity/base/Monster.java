@@ -7,14 +7,14 @@ public class Monster extends Gameobject {
 	private int lifepoint;
 	private MonsterElement element;
 
-	public Monster(String name, int attack, int lifepoint, MonsterElement element) {
-		super();
+	public Monster(String name, int attack, int lifepoint, MonsterElement element, int id) {
+		super(id);
 		setName(name);
 		setAttack(attack);
 		setLifepoint(lifepoint);
 		setElement(element);
 	}
-	
+
 	public void attack(Monster m) {
 		m.setLifepoint(m.getLifepoint() - this.getAttack());
 		this.setLifepoint(this.getLifepoint() - m.getAttack());

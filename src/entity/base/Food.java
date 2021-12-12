@@ -6,7 +6,8 @@ public class Food extends Gameobject {
 	private int attackBonus;
 	private int lifePointBonus;
 
-	public Food(String name, int attackBonus, int lifePointBonus) {
+	public Food(String name, int attackBonus, int lifePointBonus, int id) {
+		super(id);
 		setName(name);
 		this.attackBonus = attackBonus;
 		this.lifePointBonus = lifePointBonus;
