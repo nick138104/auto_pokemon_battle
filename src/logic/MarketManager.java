@@ -24,6 +24,7 @@ import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.geometry.Insets;
 import javafx.scene.control.Button;
+import javafx.scene.control.Label;
 import javafx.scene.image.ImageView;
 import javafx.scene.layout.Background;
 import javafx.scene.layout.BackgroundFill;
@@ -35,14 +36,19 @@ public class MarketManager {
 
 	public static ObservableList<Gameobject> objects = FXCollections.observableArrayList();
 	public static ObservableList<Button> marketList = FXCollections.observableArrayList();
+	public static ObservableList<Label> statList = FXCollections.observableArrayList();
+	public static int money;
+	public static int win;
+	public static int life;
+	public static int turn;
 	private static Button selectedButton;
-	private static int money;
-	private static int win;
-	private static int life;
-	private static int turn;
 
 	public static void startMarket() {
 		objects.clear();
+		money = 10;
+		win = 0;
+		life = 5;
+		turn = 0;
 		Random rand = new Random();
 		for (int i = 0; i < 3; i++) {
 			int mon = rand.nextInt(14);
@@ -94,27 +100,27 @@ public class MarketManager {
 			} else if (food == 2) {
 				name = "Pecha Berry";
 				life = 2;
-				id = 3;
+				id = 2;
 			} else if (food == 3) {
 				name = "Rowst Berry";
 				attack = 2;
 				life = 2;
-				id = 4;
+				id = 3;
 			} else if (food == 4) {
 				name = "Aspear Berry";
 				attack = 2;
 				life = 3;
-				id = 5;
+				id = 4;
 			} else if (food == 5) {
 				name = "Leppa Berry";
 				attack = 3;
 				life = 2;
-				id = 6;
+				id = 5;
 			} else {
 				name = "Oran Berry";
 				attack = 3;
 				life = 3;
-				id = 7;
+				id = 6;
 			}
 			objects.add(new Food(name, attack, life, id));
 		}
@@ -177,27 +183,27 @@ public class MarketManager {
 				} else if (food == 2) {
 					name = "Pecha Berry";
 					life = 2;
-					id = 3;
+					id = 2;
 				} else if (food == 3) {
 					name = "Rowst Berry";
 					attack = 2;
 					life = 2;
-					id = 4;
+					id = 3;
 				} else if (food == 4) {
 					name = "Aspear Berry";
 					attack = 2;
 					life = 3;
-					id = 5;
+					id = 4;
 				} else if (food == 5) {
 					name = "Leppa Berry";
 					attack = 3;
 					life = 2;
-					id = 6;
+					id = 5;
 				} else {
 					name = "Oran Berry";
 					attack = 3;
 					life = 3;
-					id = 7;
+					id = 6;
 				}
 				objects.set(i, new Food(name, attack, life, id));
 			}
@@ -256,5 +262,25 @@ public class MarketManager {
 
 	public static void setSelectedButton(Button selectedButton) {
 		MarketManager.selectedButton = selectedButton;
+	}
+
+	public static void updateMoney() {
+		statList.get(0).setText("Money : " + money);
+
+	}
+
+	public static void updateWin() {
+		statList.get(0).setText("Win : " + win + " / 5");
+
+	}
+
+	public static void updateLife() {
+		statList.get(0).setText("Life : " + life);
+
+	}
+
+	public static void updateTurn() {
+		statList.get(0).setText("Turn : " + turn);
+
 	}
 }
