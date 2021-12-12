@@ -4,10 +4,10 @@ import entity.base.Monster;
 import entity.base.MonsterElement;
 import interfacepackage.LevelUpable;
 
-public class Squirtle extends Monster implements LevelUpable{
+public class Squirtle extends Monster implements LevelUpable {
 
 	public Squirtle() {
-		super("Squirtle", 2, 4, MonsterElement.WATER);
+		super("Squirtle", 2, 4, MonsterElement.WATER, 23);
 		// TODO Auto-generated constructor stub
 	}
 
@@ -17,10 +17,12 @@ public class Squirtle extends Monster implements LevelUpable{
 			setName("Wartortle");
 			setAttack(getAttack() + 3);
 			setLifepoint(getLifepoint() + 3);
+			setId(24);
 		} else if (getName() == "Wartortle") {
 			setName("Blastoise");
 			setAttack(getAttack() + 3);
 			setLifepoint(getLifepoint() + 3);
+			setId(25);
 		}
 
 	}

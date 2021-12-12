@@ -7,7 +7,7 @@ import interfacepackage.LevelUpable;
 public class Bulbasaur extends Monster implements LevelUpable{
 
 	public Bulbasaur() {
-		super("Bulbasaur", 3, 3, MonsterElement.PLANT);
+		super("Bulbasaur", 3, 3, MonsterElement.PLANT, 0);
 		// TODO Auto-generated constructor stub
 	}
 	
@@ -17,10 +17,12 @@ public class Bulbasaur extends Monster implements LevelUpable{
 			setName("Ivysaur");
 			setAttack(getAttack() + 3);
 			setLifepoint(getLifepoint() + 3);
+			setId(1);
 		} else if (getName() == "Ivysaur") {
 			setName("Venusaur");
 			setAttack(getAttack() + 3);
 			setLifepoint(getLifepoint() + 3);
+			setId(2);
 		}
 		
 	}
