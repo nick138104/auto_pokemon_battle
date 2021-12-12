@@ -14,5 +14,4 @@ public abstract class Gameobject {
 
 	@Override
 	public abstract String toString();
-	
 }

@@ -4,7 +4,7 @@ import entity.base.Monster;
 import entity.base.MonsterElement;
 import interfacepackage.LevelUpable;
 
-public class Cyndaquil extends Monster implements LevelUpable{
+public class Cyndaquil extends Monster implements LevelUpable {
 
 	public Cyndaquil() {
 		super("Cyndaquil", 5, 3, MonsterElement.FIRE);
@@ -22,7 +22,5 @@ public class Cyndaquil extends Monster implements LevelUpable{
 			setAttack(getAttack() + 2);
 			setLifepoint(getLifepoint() + 3);
 		}
-		
 	}
-
 }
