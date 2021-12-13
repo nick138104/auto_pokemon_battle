@@ -38,6 +38,18 @@ public class ResourceHolder {
 		music.add(hitsound);
 		AudioClip freezsound = new AudioClip(ClassLoader.getSystemResource("freez_sound.mp3").toString());
 		music.add(freezsound);
+		AudioClip sellsound = new AudioClip(ClassLoader.getSystemResource("sell_sound.mp3").toString());
+		music.add(sellsound);
+		AudioClip buysound = new AudioClip(ClassLoader.getSystemResource("buy_sound.mp3").toString());
+		music.add(buysound);
+		AudioClip errorsound = new AudioClip(ClassLoader.getSystemResource("error_sound.mp3").toString());
+		music.add(errorsound);
+		AudioClip eatsound = new AudioClip(ClassLoader.getSystemResource("eat_sound.mp3").toString());
+		music.add(eatsound);
+		AudioClip levelupsound = new AudioClip(ClassLoader.getSystemResource("levelup_sound.mp3").toString());
+		music.add(levelupsound);
+		AudioClip selectsound = new AudioClip(ClassLoader.getSystemResource("select_sound.mp3").toString());
+		music.add(selectsound);
 
 		Image backgroundMenu = new Image(ClassLoader.getSystemResource("background_menu.png").toString());
 		background.add(backgroundMenu);
