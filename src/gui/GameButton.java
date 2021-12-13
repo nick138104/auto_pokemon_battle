@@ -9,7 +9,7 @@ import javafx.scene.media.MediaPlayer;
 import javafx.scene.text.Font;
 import logic.MarketManager;
 import main.Main;
-import resource.RenderableHolder;
+import resource.ResourceHolder;
 import scenepackage.SceneManager;
 
 public class GameButton {
@@ -34,9 +34,9 @@ public class GameButton {
 			@Override
 			public void handle(ActionEvent arg0) {
 				Main.primaryStage.setScene(SceneManager.menu_scene);
-				RenderableHolder.music.get(0).stop();
-				RenderableHolder.music.get(0).play();
-				RenderableHolder.music.get(0).setCycleCount(MediaPlayer.INDEFINITE);
+				ResourceHolder.music.get(0).stop();
+				ResourceHolder.music.get(0).play();
+				ResourceHolder.music.get(0).setCycleCount(MediaPlayer.INDEFINITE);
 			}
 		});
 		buttons.add(backButton);
@@ -102,9 +102,9 @@ public class GameButton {
 		playButton.setOnAction(new EventHandler<ActionEvent>() {
 			@Override
 			public void handle(ActionEvent arg0) {
-				RenderableHolder.music.get(0).stop();
-				RenderableHolder.music.get(1).play();
-				RenderableHolder.music.get(1).setCycleCount(MediaPlayer.INDEFINITE);
+				ResourceHolder.music.get(0).stop();
+				ResourceHolder.music.get(1).play();
+				ResourceHolder.music.get(1).setCycleCount(MediaPlayer.INDEFINITE);
 				Main.primaryStage.setScene(SceneManager.play_scene);
 			}
 		});
