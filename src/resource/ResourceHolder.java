@@ -5,11 +5,9 @@ import java.util.ArrayList;
 import javafx.scene.image.Image;
 import javafx.scene.media.AudioClip;
 
-public class RenderableHolder {
-	private static final RenderableHolder instance = new RenderableHolder();
+public class ResourceHolder {
+	private static final ResourceHolder instance = new ResourceHolder();
 
-	// private <IRenderable> entities;
-	// private Comparator<IRenderable> comparator;
 	public static ArrayList<Image> monster;
 	public static ArrayList<Image> background;
 	public static ArrayList<AudioClip> music;
@@ -19,7 +17,7 @@ public class RenderableHolder {
 		loadResource();
 	}
 
-	public RenderableHolder() {
+	public ResourceHolder() {
 		monster = new ArrayList<Image>();
 		background = new ArrayList<Image>();
 		music = new ArrayList<AudioClip>();
@@ -27,7 +25,7 @@ public class RenderableHolder {
 
 	}
 
-	public static RenderableHolder getInstance() {
+	public static ResourceHolder getInstance() {
 		return instance;
 	}
 

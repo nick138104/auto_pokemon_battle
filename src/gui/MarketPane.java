@@ -6,7 +6,6 @@ import javafx.event.EventHandler;
 import javafx.geometry.Insets;
 import javafx.geometry.Pos;
 import javafx.scene.control.Button;
-import javafx.scene.control.Tooltip;
 import javafx.scene.image.ImageView;
 import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.Background;
@@ -18,9 +17,8 @@ import javafx.scene.layout.BorderWidths;
 import javafx.scene.layout.CornerRadii;
 import javafx.scene.layout.GridPane;
 import javafx.scene.paint.Color;
-import javafx.scene.text.Font;
 import logic.MarketManager;
-import resource.RenderableHolder;
+import resource.ResourceHolder;
 
 public class MarketPane extends GridPane {
 
@@ -45,11 +43,13 @@ public class MarketPane extends GridPane {
 				}
 			});
 			b.setPadding(new Insets(5.0));
+			b.setMinWidth(60);
+			b.setMinHeight(60);
 			ImageView image;
 			if (i < 3) {
-				image = new ImageView(RenderableHolder.monster.get(pic_num));
+				image = new ImageView(ResourceHolder.monster.get(pic_num));
 			} else {
-				image = new ImageView(RenderableHolder.food.get(pic_num));
+				image = new ImageView(ResourceHolder.food.get(pic_num));
 			}
 			image.setFitHeight(48);
 			image.setFitWidth(48);
@@ -57,7 +57,7 @@ public class MarketPane extends GridPane {
 			b.setBackground(new Background(new BackgroundFill(Color.WHITE, CornerRadii.EMPTY, Insets.EMPTY)));
 			b.setBorder(new Border(
 					new BorderStroke(Color.GRAY, BorderStrokeStyle.SOLID, CornerRadii.EMPTY, BorderWidths.DEFAULT)));
-			//setTooltip();
+			// setTooltip();
 			MarketManager.marketList.add(b);
 		}
 		for (int i = 0; i < 5; i++) {
@@ -82,18 +82,5 @@ public class MarketPane extends GridPane {
 			MarketManager.marketList.get(i).setBackground(n);
 		}
 	}
-
-//	private void setTooltip() {
-//		Tooltip tooltip = new Tooltip();
-//		tooltip.setFont(new Font(12));
-//		tooltip.setText(MarketManager.getSelectedButton().toString());
-//		this.setOnMouseMoved((MouseEvent e) -> {
-//			if (MarketManager.getSelectedButton() != null)
-//				tooltip.show(this, e.getScreenX(), e.getScreenY() + 10);
-//		});
-//		this.setOnMouseExited((MouseEvent e) -> {
-//			tooltip.hide();
-//		});
-//	}
 
 }

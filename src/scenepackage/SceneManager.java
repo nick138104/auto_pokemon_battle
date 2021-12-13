@@ -12,7 +12,7 @@ import javafx.scene.control.Button;
 import javafx.scene.image.ImageView;
 import javafx.scene.layout.Pane;
 import javafx.scene.layout.StackPane;
-import resource.RenderableHolder;
+import resource.ResourceHolder;
 
 public class SceneManager {
 	private static final SceneManager instance = new SceneManager();
@@ -23,7 +23,7 @@ public class SceneManager {
 	private Parent createContent1() {
 		Pane root = new Pane();
 		root.setPrefSize(1050, 600);
-		ImageView img = new ImageView(RenderableHolder.background.get(0));
+		ImageView img = new ImageView(ResourceHolder.background.get(0));
 		img.setFitWidth(1050);
 		img.setFitHeight(600);
 		root.getChildren().add(img);
@@ -40,7 +40,7 @@ public class SceneManager {
 	private Parent createContent2() {
 		Pane root = new Pane();
 		root.setPrefSize(1050, 600);
-		ImageView img = new ImageView(RenderableHolder.background.get(1));
+		ImageView img = new ImageView(ResourceHolder.background.get(1));
 		img.setFitWidth(1050);
 		img.setFitHeight(600);
 		root.getChildren().add(img);
@@ -55,7 +55,7 @@ public class SceneManager {
 		StackPane root = new StackPane();
 		Canvas canvas = new Canvas(1050, 600);
 		GraphicsContext gc = canvas.getGraphicsContext2D();
-		ImageView img = new ImageView(RenderableHolder.background.get(1));
+		ImageView img = new ImageView(ResourceHolder.background.get(1));
 		img.setFitWidth(1050);
 		img.setFitHeight(600);
 		root.getChildren().add(img);

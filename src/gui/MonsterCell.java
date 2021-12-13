@@ -10,6 +10,7 @@ import javafx.scene.layout.Background;
 import javafx.scene.layout.BackgroundFill;
 import javafx.scene.layout.BackgroundImage;
 import javafx.scene.layout.BackgroundPosition;
+import javafx.scene.layout.BackgroundRepeat;
 import javafx.scene.layout.BackgroundSize;
 import javafx.scene.layout.Border;
 import javafx.scene.layout.BorderStroke;
@@ -33,7 +34,7 @@ public class MonsterCell extends Pane {
 			}
 		});
 		this.setBorder(new Border(
-				new BorderStroke(Color.LIGHTGRAY, BorderStrokeStyle.SOLID, CornerRadii.EMPTY, BorderWidths.DEFAULT)));
+				new BorderStroke(Color.LIGHTGRAY, BorderStrokeStyle.SOLID, CornerRadii.EMPTY, BorderWidths.EMPTY)));
 		// this.setUpTooltip();
 		setBackground();
 	}
@@ -48,16 +49,16 @@ public class MonsterCell extends Pane {
 	}
 
 	public void setBackground() {
-		this.setBackground(new Background(new BackgroundFill(Color.MOCCASIN, CornerRadii.EMPTY, Insets.EMPTY)));
+		setBackground(new Background(new BackgroundFill(Color.MOCCASIN, CornerRadii.EMPTY, Insets.EMPTY)));
 	}
 
 	public void setBackground(Image image) {
-		BackgroundFill bgFill = new BackgroundFill(Color.MOCCASIN, CornerRadii.EMPTY, Insets.EMPTY);
+		BackgroundFill bgFill = new BackgroundFill(Color.LIGHTSTEELBLUE, CornerRadii.EMPTY, Insets.EMPTY);
 		BackgroundFill[] bgFillA = { bgFill };
-		BackgroundSize bgSize = new BackgroundSize(100, 100, false, false, false, true);
-		BackgroundPosition bgPos= new BackgroundPosition(null, -100, isDisable(), null, BASELINE_OFFSET_SAME_AS_HEIGHT, isCache());
-		BackgroundImage bgImg = new BackgroundImage(image, null, null, BackgroundPosition.CENTER, bgSize);
+		BackgroundSize bgSize = new BackgroundSize(75, 75, false, false, false, false);
+		BackgroundImage bgImg = new BackgroundImage(image, BackgroundRepeat.NO_REPEAT, BackgroundRepeat.NO_REPEAT,
+				BackgroundPosition.CENTER, bgSize);
 		BackgroundImage[] bgImgA = { bgImg };
-		this.setBackground(new Background(bgFillA, bgImgA));
+		setBackground(new Background(bgFillA, bgImgA));
 	}
 }

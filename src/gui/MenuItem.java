@@ -13,7 +13,7 @@ import javafx.scene.text.FontWeight;
 import javafx.scene.text.Text;
 import logic.MarketManager;
 import main.Main;
-import resource.RenderableHolder;
+import resource.ResourceHolder;
 import scenepackage.SceneManager;
 
 public class MenuItem extends StackPane {
@@ -49,9 +49,9 @@ public class MenuItem extends StackPane {
 				MarketManager.startMarket();
 				MarketManager.updateMarket();
 				MarketManager.updateBoard();
-				RenderableHolder.music.get(0).stop();
-				RenderableHolder.music.get(0).play(60);
-				RenderableHolder.music.get(0).setCycleCount(MediaPlayer.INDEFINITE);
+				ResourceHolder.music.get(0).stop();
+				ResourceHolder.music.get(0).play(0.1);
+				ResourceHolder.music.get(0).setCycleCount(MediaPlayer.INDEFINITE);
 			} else if (name.equals("HOW TO PLAY")) {
 				System.out.println("HOW TO PLAY SENCE");
 			} else {
