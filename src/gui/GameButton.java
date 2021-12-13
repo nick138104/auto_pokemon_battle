@@ -51,8 +51,12 @@ public class GameButton {
 		randomButton.setOnAction(new EventHandler<ActionEvent>() {
 			@Override
 			public void handle(ActionEvent arg0) {
-				MarketManager.randomMarket();
-				MarketManager.updateMarket();
+				if (MarketManager.money != 0) {
+					MarketManager.randomMarket();
+					MarketManager.updateMarket();
+					MarketManager.money -= 1;
+					MarketManager.updateMoney();
+				}
 			}
 		});
 		buttons.add(randomButton);
@@ -78,11 +82,12 @@ public class GameButton {
 		sellButton.setFont(new Font("Serif", 16));
 		sellButton.setMinWidth(90);
 		sellButton.setPrefHeight(30);
+		sellButton.setId("5");
 		// backButton.setBackground(new Background());
 		sellButton.setOnAction(new EventHandler<ActionEvent>() {
 			@Override
 			public void handle(ActionEvent arg0) {
-				// backButtonHandler();
+				MarketManager.setSelectedButton(sellButton);
 			}
 		});
 		buttons.add(sellButton);

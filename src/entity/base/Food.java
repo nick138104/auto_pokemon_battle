@@ -1,6 +1,8 @@
 package entity.base;
 
-public class Food extends Gameobject {
+import interfacepackage.Consumeable;
+
+public class Food extends Gameobject implements Consumeable {
 
 	private String name;
 	private int attackBonus;
@@ -13,9 +15,9 @@ public class Food extends Gameobject {
 		this.lifePointBonus = lifePointBonus;
 	}
 
-	public void eatFood(Monster m) {
-		m.setAttack(getAttackBonus() + m.getAttack());
-		m.setLifepoint(getLifePointBonus() + m.getLifepoint());
+	public void eatFood(Monster monster) {
+		monster.setAttack(getAttackBonus() + monster.getAttack());
+		monster.setLifepoint(getLifePointBonus() + monster.getLifepoint());
 	}
 
 	public int getAttackBonus() {
@@ -45,7 +47,8 @@ public class Food extends Gameobject {
 	@Override
 	public String toString() {
 		// TODO Auto-generated method stub
-		return null;
+		String food = "Name : " + getName() + "\nAttack Bonus : " + getAttackBonus() + "\nLifepoint Bonus : " + getLifePointBonus();
+		return food;
 	}
 
 }

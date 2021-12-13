@@ -1,9 +1,12 @@
 package gui;
 
+import java.util.Objects;
+
 import javafx.event.EventHandler;
 import javafx.geometry.Insets;
 import javafx.geometry.Pos;
 import javafx.scene.control.Button;
+import javafx.scene.control.Tooltip;
 import javafx.scene.image.ImageView;
 import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.Background;
@@ -15,6 +18,7 @@ import javafx.scene.layout.BorderWidths;
 import javafx.scene.layout.CornerRadii;
 import javafx.scene.layout.GridPane;
 import javafx.scene.paint.Color;
+import javafx.scene.text.Font;
 import logic.MarketManager;
 import resource.RenderableHolder;
 
@@ -33,7 +37,7 @@ public class MarketPane extends GridPane {
 				@Override
 				public void handle(MouseEvent e) {
 					int index = Integer.parseInt(b.getId());
-					if (!MarketManager.objects.get(index).equals(null)) {
+					if (Objects.nonNull(MarketManager.objects.get(index))) {
 						resetButtonsBackGroundColor();
 						MarketManager.setSelectedButton(b);
 						highlight(index);
@@ -53,7 +57,7 @@ public class MarketPane extends GridPane {
 			b.setBackground(new Background(new BackgroundFill(Color.WHITE, CornerRadii.EMPTY, Insets.EMPTY)));
 			b.setBorder(new Border(
 					new BorderStroke(Color.GRAY, BorderStrokeStyle.SOLID, CornerRadii.EMPTY, BorderWidths.DEFAULT)));
-			// setTooltip();
+			//setTooltip();
 			MarketManager.marketList.add(b);
 		}
 		for (int i = 0; i < 5; i++) {
@@ -72,7 +76,7 @@ public class MarketPane extends GridPane {
 	public void resetButtonsBackGroundColor() { // TODO
 		for (int i = 0; i < 5; i++) {
 			Background n = new Background(new BackgroundFill(Color.WHITE, CornerRadii.EMPTY, Insets.EMPTY));
-			if (!MarketManager.objects.get(i).equals(null) && MarketManager.objects.get(i).isFreez()) {
+			if (Objects.nonNull(MarketManager.objects.get(i)) && MarketManager.objects.get(i).isFreez()) {
 				n = new Background(new BackgroundFill(Color.LIGHTBLUE, CornerRadii.EMPTY, Insets.EMPTY));
 			}
 			MarketManager.marketList.get(i).setBackground(n);
@@ -82,9 +86,9 @@ public class MarketPane extends GridPane {
 //	private void setTooltip() {
 //		Tooltip tooltip = new Tooltip();
 //		tooltip.setFont(new Font(12));
-//		tooltip.setText(item.getItemName() + item.getPriceText() + item.getIncomeText());
+//		tooltip.setText(MarketManager.getSelectedButton().toString());
 //		this.setOnMouseMoved((MouseEvent e) -> {
-//			if (item != null)
+//			if (MarketManager.getSelectedButton() != null)
 //				tooltip.show(this, e.getScreenX(), e.getScreenY() + 10);
 //		});
 //		this.setOnMouseExited((MouseEvent e) -> {
