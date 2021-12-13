@@ -47,7 +47,7 @@ public class SceneManager {
 		GamePane panes = new GamePane();
 		Button backbutton = panes.getbackButton();
 		backbutton.setTranslateX(980);
-		root.getChildren().addAll(backbutton, panes.getStatPane(), panes.getGamePane());
+		root.getChildren().addAll(backbutton, panes.getStatPane(), panes.getMonsterPane(), panes.getGamePane());
 		return root;
 	}
 

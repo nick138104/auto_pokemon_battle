@@ -48,6 +48,7 @@ public class MenuItem extends StackPane {
 				Main.primaryStage.setScene(SceneManager.game_scene);
 				MarketManager.startMarket();
 				MarketManager.updateMarket();
+				MarketManager.updateBoard();
 				RenderableHolder.music.get(0).stop();
 				RenderableHolder.music.get(0).play(60);
 				RenderableHolder.music.get(0).setCycleCount(MediaPlayer.INDEFINITE);

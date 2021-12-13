@@ -2,29 +2,29 @@ package entity;
 
 import entity.base.Monster;
 import entity.base.MonsterElement;
-import interfacepackage.LevelUpable;
 
-public class Torchic extends Monster implements LevelUpable {
+public class Torchic extends Monster{
 
 	public Torchic() {
 		super("Torchic", 5, 5, MonsterElement.FIRE, 26);
 		// TODO Auto-generated constructor stub
 	}
 
-	public void levelUp() {
+	public boolean islevelUp(Monster monster) {
 		// TODO Auto-generated method stub
-		if (getName() == "Torchic") {
-			setName("Combusken");
-			setAttack(getAttack() + 2);
-			setLifepoint(getLifepoint() + 2);
-			setId(27);
-		} else if (getName() == "Combusken") {
-			setName("Blaziken");
-			setAttack(getAttack() + 2);
-			setLifepoint(getLifepoint() + 2);
-			setId(28);
+		if (monster.getName().equals("Torchic")) {
+			monster.setName("Combusken");
+			monster.setAttack(getAttack() + 2);
+			monster.setLifepoint(getLifepoint() + 2);
+			monster.setId(27);
+			return true;
+		} else if (monster.getName().equals("Combusken")) {
+			monster.setName("Blaziken");
+			monster.setAttack(getAttack() + 2);
+			monster.setLifepoint(getLifepoint() + 2);
+			monster.setId(28);
+			return true;
 		}
-
+		return false;
 	}
-
 }

@@ -82,11 +82,12 @@ public class GameButton {
 		sellButton.setFont(new Font("Serif", 16));
 		sellButton.setMinWidth(90);
 		sellButton.setPrefHeight(30);
+		sellButton.setId("5");
 		// backButton.setBackground(new Background());
 		sellButton.setOnAction(new EventHandler<ActionEvent>() {
 			@Override
 			public void handle(ActionEvent arg0) {
-				// backButtonHandler();
+				MarketManager.setSelectedButton(sellButton);
 			}
 		});
 		buttons.add(sellButton);
