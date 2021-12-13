@@ -32,7 +32,7 @@ import javafx.scene.layout.BackgroundFill;
 import javafx.scene.layout.CornerRadii;
 import javafx.scene.layout.Pane;
 import javafx.scene.paint.Color;
-import resource.RenderableHolder;
+import resource.ResourceHolder;
 
 public class MarketManager {
 
@@ -67,7 +67,7 @@ public class MarketManager {
 			}
 		}
 		for (int i = 3; i < 5; i++) {
-			if (Objects.nonNull(objects.get(i)) && !objects.get(i).isFreez()) {
+			if (Objects.isNull(objects.get(i)) && !objects.get(i).isFreez()) {
 				objects.set(i, randomFood());
 			}
 		}
@@ -218,9 +218,9 @@ public class MarketManager {
 				int pic_num = objects.get(i).getId();
 				ImageView image;
 				if (i < 3) {
-					image = new ImageView(RenderableHolder.monster.get(pic_num));
+					image = new ImageView(ResourceHolder.monster.get(pic_num));
 				} else {
-					image = new ImageView(RenderableHolder.food.get(pic_num));
+					image = new ImageView(ResourceHolder.food.get(pic_num));
 				}
 				image.setFitHeight(48);
 				image.setFitWidth(48);
@@ -232,7 +232,6 @@ public class MarketManager {
 					marketList.get(i).setBackground(
 							new Background(new BackgroundFill(Color.WHITE, CornerRadii.EMPTY, Insets.EMPTY)));
 				}
-				// setTooltip();
 			} else {
 				marketList.get(i).setGraphic(null);
 				marketList.get(i).setBackground(
@@ -247,7 +246,7 @@ public class MarketManager {
 				board.get(i).setBackground();
 			} else {
 				int index = monsters.get(i).getId();
-				board.get(i).setBackground(RenderableHolder.monster.get(index));
+				board.get(i).setBackground(ResourceHolder.monster.get(index));
 			}
 		}
 	}
