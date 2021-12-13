@@ -1,5 +1,7 @@
 package gui;
 
+import java.util.Objects;
+
 import javafx.event.EventHandler;
 import javafx.geometry.Insets;
 import javafx.geometry.Pos;
@@ -33,7 +35,7 @@ public class MarketPane extends GridPane {
 				@Override
 				public void handle(MouseEvent e) {
 					int index = Integer.parseInt(b.getId());
-					if (!MarketManager.objects.get(index).equals(null)) {
+					if (Objects.nonNull(MarketManager.objects.get(index))) {
 						resetButtonsBackGroundColor();
 						MarketManager.setSelectedButton(b);
 						highlight(index);
@@ -72,7 +74,7 @@ public class MarketPane extends GridPane {
 	public void resetButtonsBackGroundColor() { // TODO
 		for (int i = 0; i < 5; i++) {
 			Background n = new Background(new BackgroundFill(Color.WHITE, CornerRadii.EMPTY, Insets.EMPTY));
-			if (!MarketManager.objects.get(i).equals(null) && MarketManager.objects.get(i).isFreez()) {
+			if (Objects.nonNull(MarketManager.objects.get(i)) && MarketManager.objects.get(i).isFreez()) {
 				n = new Background(new BackgroundFill(Color.LIGHTBLUE, CornerRadii.EMPTY, Insets.EMPTY));
 			}
 			MarketManager.marketList.get(i).setBackground(n);

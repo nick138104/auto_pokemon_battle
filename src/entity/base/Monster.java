@@ -1,6 +1,6 @@
 package entity.base;
 
-public class Monster extends Gameobject {
+public abstract class Monster extends Gameobject {
 
 	private String name;
 	private int attack;
@@ -52,10 +52,14 @@ public class Monster extends Gameobject {
 		this.element = element;
 	}
 
+	public abstract boolean islevelUp(Monster monster);
+
 	@Override
 	public String toString() {
 		// TODO Auto-generated method stub
-		return null;
+		String monster = "Name : " + getName() + "\nAttack : " + getAttack() + "\nLifepoint : " + lifepoint
+				+ "\nElement : ";
+		return monster;
 	}
 
 }

@@ -2,28 +2,29 @@ package entity;
 
 import entity.base.Monster;
 import entity.base.MonsterElement;
-import interfacepackage.LevelUpable;
 
-public class Piplup extends Monster implements LevelUpable {
+public class Piplup extends Monster{
 
 	public Piplup() {
 		super("Piplup", 6, 6, MonsterElement.WATER, 20);
 		// TODO Auto-generated constructor stub
 	}
 
-	public void levelUp() {
+	public boolean islevelUp(Monster monster) {
 		// TODO Auto-generated method stub
-		if (getName() == "Piplup") {
-			setName("Prinplup");
-			setAttack(getAttack() + 1);
-			setLifepoint(getLifepoint() + 2);
-			setId(21);
-		} else if (getName() == "Prinplup") {
-			setName("");
-			setAttack(getAttack() + 1);
-			setLifepoint(getLifepoint() + 2);
-			setId(22);
+		if (monster.getName().equals("Piplup")) {
+			monster.setName("Prinplup");
+			monster.setAttack(getAttack() + 1);
+			monster.setLifepoint(getLifepoint() + 2);
+			monster.setId(21);
+			return true;
+		} else if (monster.getName().equals("Prinplup")) {
+			monster.setName("Empoleon");
+			monster.setAttack(getAttack() + 1);
+			monster.setLifepoint(getLifepoint() + 2);
+			monster.setId(22);
+			return true;
 		}
+		return false;
 	}
-
 }

@@ -2,29 +2,29 @@ package entity;
 
 import entity.base.Monster;
 import entity.base.MonsterElement;
-import interfacepackage.LevelUpable;
 
-public class Mudkip extends Monster implements LevelUpable {
+public class Mudkip extends Monster {
 
 	public Mudkip() {
 		super("Mudkip", 4, 6, MonsterElement.WATER, 16);
 		// TODO Auto-generated constructor stub
 	}
 
-	public void levelUp() {
+	public boolean islevelUp(Monster monster) {
 		// TODO Auto-generated method stub
-		if (getName() == "Mudkip") {
-			setName("Marshtomp");
-			setAttack(getAttack() + 2);
-			setLifepoint(getLifepoint() + 2);
-			setId(17);
-		} else if (getName() == "Marshtomp") {
-			setName("Swampert");
-			setAttack(getAttack() + 2);
-			setLifepoint(getLifepoint() + 2);
-			setId(18);
+		if (monster.getName().equals("Mudkip")) {
+			monster.setName("Marshtomp");
+			monster.setAttack(getAttack() + 2);
+			monster.setLifepoint(getLifepoint() + 2);
+			monster.setId(17);
+			return true;
+		} else if (monster.getName().equals("Marshtomp")) {
+			monster.setName("Swampert");
+			monster.setAttack(getAttack() + 2);
+			monster.setLifepoint(getLifepoint() + 2);
+			monster.setId(18);
+			return true;
 		}
-
+		return false;
 	}
-
 }
