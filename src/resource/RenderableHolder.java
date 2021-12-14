@@ -4,12 +4,13 @@ import java.util.Collections;
 import java.util.Comparator;
 
 import interfacepackage.IRenderable;
+import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 
 public class RenderableHolder {
 	private static final RenderableHolder instance = new RenderableHolder();
 
-	private ObservableList<IRenderable> entities;
+	private ObservableList<IRenderable> entities = FXCollections.observableArrayList();
 	private Comparator<IRenderable> comparator;
 
 	public RenderableHolder() {
