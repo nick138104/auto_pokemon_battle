@@ -14,14 +14,14 @@ public class Piplup extends Monster{
 		// TODO Auto-generated method stub
 		if (monster.getName().equals("Piplup")) {
 			monster.setName("Prinplup");
-			monster.setAttack(getAttack() + 1);
-			monster.setLifepoint(getLifepoint() + 2);
+			monster.setAttack(monster.getAttack() + 1);
+			monster.setLifepoint(monster.getLifepoint() + 2);
 			monster.setId(21);
 			return true;
 		} else if (monster.getName().equals("Prinplup")) {
 			monster.setName("Empoleon");
-			monster.setAttack(getAttack() + 1);
-			monster.setLifepoint(getLifepoint() + 2);
+			monster.setAttack(monster.getAttack() + 1);
+			monster.setLifepoint(monster.getLifepoint() + 2);
 			monster.setId(22);
 			return true;
 		}

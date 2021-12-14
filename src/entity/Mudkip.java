@@ -14,14 +14,14 @@ public class Mudkip extends Monster {
 		// TODO Auto-generated method stub
 		if (monster.getName().equals("Mudkip")) {
 			monster.setName("Marshtomp");
-			monster.setAttack(getAttack() + 2);
-			monster.setLifepoint(getLifepoint() + 2);
+			monster.setAttack(monster.getAttack() + 2);
+			monster.setLifepoint(monster.getLifepoint() + 2);
 			monster.setId(17);
 			return true;
 		} else if (monster.getName().equals("Marshtomp")) {
 			monster.setName("Swampert");
-			monster.setAttack(getAttack() + 2);
-			monster.setLifepoint(getLifepoint() + 2);
+			monster.setAttack(monster.getAttack() + 2);
+			monster.setLifepoint(monster.getLifepoint() + 2);
 			monster.setId(18);
 			return true;
 		}

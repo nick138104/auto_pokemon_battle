@@ -14,14 +14,14 @@ public class Treecko extends Monster {
 		// TODO Auto-generated method stub
 		if (monster.getName().equals("Treecko")) {
 			monster.setName("Grovyle");
-			monster.setAttack(getAttack() + 2);
-			monster.setLifepoint(getLifepoint() + 2);
+			monster.setAttack(monster.getAttack() + 2);
+			monster.setLifepoint(monster.getLifepoint() + 2);
 			monster.setId(33);
 			return true;
 		} else if (monster.getName().equals("Grovyle")) {
 			monster.setName("Sceptile");
-			monster.setAttack(getAttack() + 2);
-			monster.setLifepoint(getLifepoint() + 2);
+			monster.setAttack(monster.getAttack() + 2);
+			monster.setLifepoint(monster.getLifepoint() + 2);
 			monster.setId(34);
 			return true;
 		}

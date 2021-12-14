@@ -15,14 +15,14 @@ public class Turtwig extends Monster {
 		// TODO Auto-generated method stub
 		if (monster.getName().equals("Turtwig")) {
 			monster.setName("Grotle");
-			monster.setAttack(getAttack() + 1);
-			monster.setLifepoint(getLifepoint() + 2);
+			monster.setAttack(monster.getAttack() + 1);
+			monster.setLifepoint(monster.getLifepoint() + 2);
 			monster.setId(36);
 			return true;
 		} else if (monster.getName().equals("Grotle")) {
 			monster.setName("Torterra");
-			monster.setAttack(getAttack() + 1);
-			monster.setLifepoint(getLifepoint() + 2);
+			monster.setAttack(monster.getAttack() + 1);
+			monster.setLifepoint(monster.getLifepoint() + 2);
 			monster.setId(37);
 			return true;
 		}

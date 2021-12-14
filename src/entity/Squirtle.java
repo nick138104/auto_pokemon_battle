@@ -14,14 +14,14 @@ public class Squirtle extends Monster {
 		// TODO Auto-generated method stub
 		if (monster.getName().equals("Squirtle")) {
 			monster.setName("Wartortle");
-			monster.setAttack(getAttack() + 3);
-			monster.setLifepoint(getLifepoint() + 3);
+			monster.setAttack(monster.getAttack() + 3);
+			monster.setLifepoint(monster.getLifepoint() + 3);
 			monster.setId(24);
 			return true;
 		} else if (monster.getName().equals("Wartortle")) {
 			monster.setName("Blastoise");
-			monster.setAttack(getAttack() + 3);
-			monster.setLifepoint(getLifepoint() + 3);
+			monster.setAttack(monster.getAttack() + 3);
+			monster.setLifepoint(monster.getLifepoint() + 3);
 			monster.setId(25);
 			return true;
 		}

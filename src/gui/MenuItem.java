@@ -49,6 +49,7 @@ public class MenuItem extends StackPane {
 				MarketManager.startMarket();
 				MarketManager.updateMarket();
 				MarketManager.updateBoard();
+				MarketManager.updateTooltip();
 				ResourceHolder.getInstance().music.get(0).stop();
 				ResourceHolder.getInstance().music.get(0).play(0.05);
 				ResourceHolder.getInstance().music.get(0).setCycleCount(MediaPlayer.INDEFINITE);
