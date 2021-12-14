@@ -32,7 +32,7 @@ public class BattleUtils {
 			num.remove(randomIndex);
 		}
 		for (int i = 0; i < 12; i++) {
-			addNewObject(new HitLine());
+			// addNewObject(new HitLine());
 		}
 	}
 

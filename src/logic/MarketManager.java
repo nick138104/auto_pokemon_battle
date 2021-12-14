@@ -116,41 +116,24 @@ public class MarketManager {
 	private static Food randomFood() {
 		Random rand = new Random();
 		int food = rand.nextInt(7);
-		String name;
-		int attack = 0;
-		int life = 0;
-		int id = food;
 		switch (food) {
 		case 0:
-			name = "Cheri Berry";
-			attack = 1;
-			life = 1;
+			return new Food("Cheri Berry", 1, 1, 0);
 		case 1:
-			name = "Chesto Berry";
-			attack = 2;
+			return new Food("Chesto Berry", 2, 0, 0);
 		case 2:
-			name = "Pecha Berry";
-			life = 2;
+			return new Food("Pecha Berry", 0, 2, 2);
 		case 3:
-			name = "Rowst Berry";
-			attack = 2;
-			life = 2;
+			return new Food("Rowst Berry", 2, 2, 3);
 		case 4:
-			name = "Aspear Berry";
-			attack = 2;
-			life = 3;
+			return new Food("Aspear Berry", 2, 3, 4);
 		case 5:
-			name = "Leppa Berry";
-			attack = 3;
-			life = 2;
+			return new Food("Leppa Berry", 3, 2, 5);
 		case 6:
-			name = "Oran Berry";
-			attack = 3;
-			life = 3;
+			return new Food("Oran Berry", 3, 3, 6);
 		default:
-			name = "";
+			return null;
 		}
-		return new Food(name, attack, life, id);
 	}
 
 	public static void freezMarket() {
