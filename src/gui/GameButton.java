@@ -55,6 +55,7 @@ public class GameButton {
 					MarketManager.updateMarket();
 					MarketManager.money -= 1;
 					MarketManager.updateMoney();
+					MarketManager.updateTooltip();
 				}
 			}
 		});
@@ -85,6 +86,7 @@ public class GameButton {
 			@Override
 			public void handle(ActionEvent arg0) {
 				MarketManager.setSelectedButton(sellButton);
+				MarketManager.updateTooltip();
 			}
 		});
 		buttons.add(sellButton);

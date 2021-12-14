@@ -14,14 +14,14 @@ public class Totodile extends Monster {
 		// TODO Auto-generated method stub
 		if (monster.getName().equals("Totodile")) {
 			monster.setName("Croconaw");
-			monster.setAttack(getAttack() + 2);
-			monster.setLifepoint(getLifepoint() + 3);
+			monster.setAttack(monster.getAttack() + 2);
+			monster.setLifepoint(monster.getLifepoint() + 3);
 			monster.setId(30);
 			return true;
 		} else if (monster.getName().equals("Croconaw")) {
 			monster.setName("Feraligatr");
-			monster.setAttack(getAttack() + 2);
-			monster.setLifepoint(getLifepoint() + 3);
+			monster.setAttack(monster.getAttack() + 2);
+			monster.setLifepoint(monster.getLifepoint() + 3);
 			monster.setId(31);
 			return true;
 		}

@@ -33,10 +33,10 @@ public class MarketPane extends GridPane {
 			int pic_num = MarketManager.objects.get(i).getId();
 			Button b = new Button();
 			b.setId("" + i);
+			int index = Integer.parseInt(b.getId());
 			b.addEventHandler(MouseEvent.MOUSE_CLICKED, new EventHandler<MouseEvent>() {
 				@Override
 				public void handle(MouseEvent e) {
-					int index = Integer.parseInt(b.getId());
 					if (Objects.nonNull(MarketManager.objects.get(index))) {
 						resetButtonsBackGroundColor();
 						MarketManager.setSelectedButton(b);
@@ -59,18 +59,18 @@ public class MarketPane extends GridPane {
 			b.setBackground(new Background(new BackgroundFill(Color.WHITE, CornerRadii.EMPTY, Insets.EMPTY)));
 			b.setBorder(new Border(
 					new BorderStroke(Color.GRAY, BorderStrokeStyle.SOLID, CornerRadii.EMPTY, BorderWidths.DEFAULT)));
-			//setTooltip();
-//			Tooltip tooltip = new Tooltip();
-//			tooltip.setFont(new Font(12));
-//			tooltip.setText(MarketManager.objects.get(i).toString());
-//			b.setOnMouseMoved((MouseEvent e) -> {
-//				if (b != null)
-//					tooltip.show(b, e.getScreenX(), e.getScreenY() + 10);
-//			});
-//			b.setOnMouseExited((MouseEvent e) -> {
-//				tooltip.hide();
-//			});
-//			MarketManager.marketList.add(b);
+			Tooltip tooltip = new Tooltip();
+			tooltip.setFont(new Font(12));
+			b.setOnMouseMoved((MouseEvent e) -> {
+				if (Objects.nonNull(MarketManager.objects.get(index))) {
+					tooltip.show(b, e.getScreenX(), e.getScreenY() + 10);
+				}
+			});
+			b.setOnMouseExited((MouseEvent e) -> {
+				tooltip.hide();
+			});
+			MarketManager.marketList.add(b);
+			MarketManager.marketlisttooltip.add(tooltip);
 		}
 		for (int i = 0; i < 5; i++) {
 			add(MarketManager.marketList.get(i), i, 0);

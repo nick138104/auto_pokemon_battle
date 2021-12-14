@@ -14,14 +14,14 @@ public class Cyndaquil extends Monster {
 		// TODO Auto-generated method stub
 		if (monster.getName().equals("Cyndaquil")) {
 			monster.setName("Quilava");
-			monster.setAttack(getAttack() + 2);
-			monster.setLifepoint(getLifepoint() + 3);
+			monster.setAttack(monster.getAttack() + 2);
+			monster.setLifepoint(monster.getLifepoint() + 3);
 			monster.setId(13);
 			return true;
 		} else if (monster.getName().equals("Quilava")) {
 			monster.setName("Typhlosion");
-			monster.setAttack(getAttack() + 2);
-			monster.setLifepoint(getLifepoint() + 3);
+			monster.setAttack(monster.getAttack() + 2);
+			monster.setLifepoint(monster.getLifepoint() + 3);
 			monster.setId(14);
 			return true;
 		}

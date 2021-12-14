@@ -14,14 +14,14 @@ public class Chimchar extends Monster {
 		// TODO Auto-generated method stub
 		if (monster.getName().equals("Chimchar")) {
 			monster.setName("Monferno");
-			monster.setAttack(getAttack() + 1);
-			monster.setLifepoint(getLifepoint() + 2);
+			monster.setAttack(monster.getAttack() + 1);
+			monster.setLifepoint(monster.getLifepoint() + 2);
 			monster.setId(10);
 			return true;
 		} else if (monster.getName().equals("Monferno")) {
 			monster.setName("Infernape");
-			monster.setAttack(getAttack() + 1);
-			monster.setLifepoint(getLifepoint() + 2);
+			monster.setAttack(monster.getAttack() + 1);
+			monster.setLifepoint(monster.getLifepoint() + 2);
 			monster.setId(11);
 			return true;
 		}

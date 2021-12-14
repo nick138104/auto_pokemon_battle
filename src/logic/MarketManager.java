@@ -28,13 +28,11 @@ import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 import javafx.scene.control.Tooltip;
 import javafx.scene.image.ImageView;
-import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.Background;
 import javafx.scene.layout.BackgroundFill;
 import javafx.scene.layout.CornerRadii;
 import javafx.scene.layout.Pane;
 import javafx.scene.paint.Color;
-import javafx.scene.text.Font;
 import resource.ResourceHolder;
 
 public class MarketManager {
@@ -42,8 +40,10 @@ public class MarketManager {
 	public static ObservableList<Label> statList = FXCollections.observableArrayList();
 	public static ObservableList<Monster> monsters = FXCollections.observableArrayList();
 	public static ObservableList<MonsterCell> board = FXCollections.observableArrayList();
+	public static ObservableList<Tooltip> boardtooltip = FXCollections.observableArrayList();
 	public static ObservableList<Gameobject> objects = FXCollections.observableArrayList();
 	public static ObservableList<Button> marketList = FXCollections.observableArrayList();
+	public static ObservableList<Tooltip> marketlisttooltip = FXCollections.observableArrayList();
 	public static int money;
 	public static int win;
 	public static int health;
@@ -203,29 +203,24 @@ public class MarketManager {
 			}
 		}
 	}
-	
-//	private void setTooltip() {
-//		for (int i =0; i<5; i++) {
-//			Tooltip tooltip = new Tooltip();
-//			tooltip.setFont(new Font(12));
-//			tooltip.setText(marketList.get(i).toString());
-//			this.marketList.get(i).setOnMouseMoved((MouseEvent e) -> {
-//				if (marketList.get(i) != null)
-//					tooltip.show(this.marketList.get(i), e.getScreenX(), e.getScreenY() + 10);
-//			});
-//			this.marketList.get(i).setOnMouseExited((MouseEvent e) -> {
-//				tooltip.hide();
-//			});
-//		}
-//	}
-	
-	
+
+	public static void updateTooltip() {
+		for (int i = 0; i < 5; i++) {
+			if (Objects.nonNull(monsters.get(i))) {
+				boardtooltip.get(i).setText(monsters.get(i).toString());
+			}
+			if (Objects.nonNull(objects.get(i))) {
+				marketlisttooltip.get(i).setText(objects.get(i).toString());
+			}
+		}
+	}
 
 	private static void updateAfterManage() {
 		updateMonster();
 		updateMarket();
 		setSelectedButton(null);
 		updateMoney();
+		MarketManager.updateTooltip();
 	}
 
 	public static void updateMarket() {

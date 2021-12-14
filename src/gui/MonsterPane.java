@@ -1,12 +1,17 @@
 package gui;
 
+import java.util.Objects;
+
 import javafx.geometry.Insets;
 import javafx.geometry.Pos;
+import javafx.scene.control.Tooltip;
+import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.Background;
 import javafx.scene.layout.BackgroundFill;
 import javafx.scene.layout.CornerRadii;
 import javafx.scene.layout.GridPane;
 import javafx.scene.paint.Color;
+import javafx.scene.text.Font;
 import logic.MarketManager;
 
 public class MonsterPane extends GridPane {
@@ -25,6 +30,18 @@ public class MonsterPane extends GridPane {
 			MarketManager.board.add(monstercell);
 			monstercell.setId("" + i);
 			add(monstercell, i, 0);
+			Tooltip tooltip = new Tooltip();
+			tooltip.setFont(new Font(12));
+			monstercell.setOnMouseMoved((MouseEvent e) -> {
+				int index = Integer.parseInt(monstercell.getId());
+				if (Objects.nonNull(MarketManager.monsters.get(index))) {
+					tooltip.show(this, e.getScreenX(), e.getScreenY() + 10);
+				}
+			});
+			monstercell.setOnMouseExited((MouseEvent e) -> {
+				tooltip.hide();
+			});
+			MarketManager.boardtooltip.add(tooltip);
 		}
 	}
 }

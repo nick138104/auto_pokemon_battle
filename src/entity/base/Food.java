@@ -47,7 +47,8 @@ public class Food extends Gameobject implements Consumeable {
 	@Override
 	public String toString() {
 		// TODO Auto-generated method stub
-		String food = "Name : " + getName() + "\nAttack Bonus : " + getAttackBonus() + "\nLifepoint Bonus : " + getLifePointBonus();
+		String food = "Name : " + getName() + "\nAttack Bonus : " + getAttackBonus() + "\nLifepoint Bonus : "
+				+ getLifePointBonus();
 		return food;
 	}
 

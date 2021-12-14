@@ -2,10 +2,8 @@ package gui;
 
 import java.util.Objects;
 
-import entity.base.Monster;
 import javafx.event.EventHandler;
 import javafx.geometry.Insets;
-import javafx.scene.control.Tooltip;
 import javafx.scene.image.Image;
 import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.Background;
@@ -21,7 +19,6 @@ import javafx.scene.layout.BorderWidths;
 import javafx.scene.layout.CornerRadii;
 import javafx.scene.layout.Pane;
 import javafx.scene.paint.Color;
-import javafx.scene.text.Font;
 import logic.MarketManager;
 
 public class MonsterCell extends Pane {
@@ -62,18 +59,5 @@ public class MonsterCell extends Pane {
 		BackgroundImage[] bgImgA = { bgImg };
 		setBackground(new Background(bgFillA, bgImgA));
 	}
-	
-	private void setUpTooltip(Monster monster) {
-		Tooltip tooltip = new Tooltip();
-		tooltip.setFont(new Font(12));
-		tooltip.setText(monster.toString());
-		this.setOnMouseMoved((MouseEvent e) -> {
-			//if ( != null)
-				tooltip.show(this, e.getScreenX(), e.getScreenY() + 10);
-		});
-		this.setOnMouseExited((MouseEvent e) -> {
-			tooltip.hide();
-		});
 
-	}
 }

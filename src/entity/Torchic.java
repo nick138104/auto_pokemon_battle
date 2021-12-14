@@ -14,14 +14,14 @@ public class Torchic extends Monster{
 		// TODO Auto-generated method stub
 		if (monster.getName().equals("Torchic")) {
 			monster.setName("Combusken");
-			monster.setAttack(getAttack() + 2);
-			monster.setLifepoint(getLifepoint() + 2);
+			monster.setAttack(monster.getAttack() + 2);
+			monster.setLifepoint(monster.getLifepoint() + 2);
 			monster.setId(27);
 			return true;
 		} else if (monster.getName().equals("Combusken")) {
 			monster.setName("Blaziken");
-			monster.setAttack(getAttack() + 2);
-			monster.setLifepoint(getLifepoint() + 2);
+			monster.setAttack(monster.getAttack() + 2);
+			monster.setLifepoint(monster.getLifepoint() + 2);
 			monster.setId(28);
 			return true;
 		}
