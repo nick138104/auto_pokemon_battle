@@ -12,12 +12,12 @@ public class Main extends Application {
 
 	@Override
 	public void start(Stage primaryStage) throws Exception {
-		ResourceHolder.music.get(0).play();
-		ResourceHolder.music.get(0).setCycleCount(MediaPlayer.INDEFINITE);
+		ResourceHolder.getInstance().music.get(0).play(0.3);
+		ResourceHolder.getInstance().music.get(0).setCycleCount(MediaPlayer.INDEFINITE);
 		Main.primaryStage = primaryStage;
 		primaryStage.setTitle("Auto_Pokemon_Battle");
 		primaryStage.setResizable(false);
-		primaryStage.setScene(SceneManager.menu_scene);
+		primaryStage.setScene(SceneManager.getInstance().menu_scene);
 		primaryStage.show();
 	}
 

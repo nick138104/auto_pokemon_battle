@@ -1,6 +1,9 @@
 package entity.base;
 
-public abstract class Monster extends Gameobject {
+import interfacepackage.IRenderable;
+import javafx.scene.canvas.GraphicsContext;
+
+public class Monster extends Gameobject implements IRenderable {
 
 	private String name;
 	private int attack;
@@ -15,9 +18,31 @@ public abstract class Monster extends Gameobject {
 		setElement(element);
 	}
 
-	public void attack(Monster m) {
-		m.setLifepoint(m.getLifepoint() - this.getAttack());
-		this.setLifepoint(this.getLifepoint() - m.getAttack());
+	public void attack(Monster mon) {
+		mon.setLifepoint(mon.getLifepoint() - this.getAttack());
+		this.setLifepoint(this.getLifepoint() - mon.getAttack());
+	}
+
+	public Monster createCopy() {
+		return new Monster(getName(), getAttack(), getLifepoint(), getElement(), getId());
+	}
+
+	@Override
+	public int getZ() {
+		// TODO Auto-generated method stub
+		return 1;
+	}
+
+	@Override
+	public void draw(GraphicsContext gc) {
+		// TODO Auto-generated method stub
+
+	}
+
+	@Override
+	public boolean isVisible() {
+		// TODO Auto-generated method stub
+		return false;
 	}
 
 	public String getName() {
@@ -52,7 +77,9 @@ public abstract class Monster extends Gameobject {
 		this.element = element;
 	}
 
-	public abstract boolean islevelUp(Monster monster);
+	public boolean isLevelUp(Monster monster) {
+		return false;
+	}
 
 	@Override
 	public String toString() {

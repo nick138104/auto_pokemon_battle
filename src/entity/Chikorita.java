@@ -11,7 +11,7 @@ public class Chikorita extends Monster {
 	}
 
 	@Override
-	public boolean islevelUp(Monster monster) {
+	public boolean isLevelUp(Monster monster) {
 		// TODO Auto-generated method stub
 		if (monster.getName().equals("Chikorita")) {
 			monster.setName("Bayleef");

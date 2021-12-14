@@ -2,6 +2,7 @@ package gui;
 
 import java.util.ArrayList;
 
+import animation.Animation;
 import javafx.event.ActionEvent;
 import javafx.event.EventHandler;
 import javafx.scene.control.Button;
@@ -29,14 +30,13 @@ public class GameButton {
 		backButton.setFont(new Font("Serif", 16));
 		backButton.setPrefWidth(70);
 		backButton.setPrefHeight(30);
-		// backButton.setBackground(new Background());
 		backButton.setOnAction(new EventHandler<ActionEvent>() {
 			@Override
 			public void handle(ActionEvent arg0) {
-				Main.primaryStage.setScene(SceneManager.menu_scene);
-				ResourceHolder.music.get(0).stop();
-				ResourceHolder.music.get(0).play();
-				ResourceHolder.music.get(0).setCycleCount(MediaPlayer.INDEFINITE);
+				Main.primaryStage.setScene(SceneManager.getInstance().menu_scene);
+				ResourceHolder.getInstance().music.get(0).stop();
+				ResourceHolder.getInstance().music.get(0).play(0.3);
+				ResourceHolder.getInstance().music.get(0).setCycleCount(MediaPlayer.INDEFINITE);
 			}
 		});
 		buttons.add(backButton);
@@ -47,11 +47,10 @@ public class GameButton {
 		randomButton.setFont(new Font("Serif", 16));
 		randomButton.setMinWidth(90);
 		randomButton.setPrefHeight(30);
-		// backButton.setBackground(new Background());
 		randomButton.setOnAction(new EventHandler<ActionEvent>() {
 			@Override
 			public void handle(ActionEvent arg0) {
-				if (MarketManager.money != 0) {
+				if (MarketManager.money > 0) {
 					MarketManager.randomMarket();
 					MarketManager.updateMarket();
 					MarketManager.money -= 1;
@@ -67,7 +66,6 @@ public class GameButton {
 		freezButton.setFont(new Font("Serif", 16));
 		freezButton.setMinWidth(90);
 		freezButton.setPrefHeight(30);
-		// backButton.setBackground(new Background());
 		freezButton.setOnAction(new EventHandler<ActionEvent>() {
 			@Override
 			public void handle(ActionEvent arg0) {
@@ -83,7 +81,6 @@ public class GameButton {
 		sellButton.setMinWidth(90);
 		sellButton.setPrefHeight(30);
 		sellButton.setId("5");
-		// backButton.setBackground(new Background());
 		sellButton.setOnAction(new EventHandler<ActionEvent>() {
 			@Override
 			public void handle(ActionEvent arg0) {
@@ -98,14 +95,14 @@ public class GameButton {
 		playButton.setFont(new Font("Serif", 16));
 		playButton.setMinWidth(90);
 		playButton.setPrefHeight(30);
-		// backButton.setBackground(new Background());
 		playButton.setOnAction(new EventHandler<ActionEvent>() {
 			@Override
 			public void handle(ActionEvent arg0) {
-				ResourceHolder.music.get(0).stop();
-				ResourceHolder.music.get(1).play();
-				ResourceHolder.music.get(1).setCycleCount(MediaPlayer.INDEFINITE);
-				Main.primaryStage.setScene(SceneManager.play_scene);
+				ResourceHolder.getInstance().music.get(0).stop();
+				ResourceHolder.getInstance().music.get(1).play(0.4);
+				ResourceHolder.getInstance().music.get(1).setCycleCount(MediaPlayer.INDEFINITE);
+				Main.primaryStage.setScene(SceneManager.getInstance().play_scene);
+				new Animation();
 			}
 		});
 		buttons.add(playButton);

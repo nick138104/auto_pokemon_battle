@@ -18,7 +18,7 @@ public class Pikachu extends Monster implements PreRoundActable {
 	}
 
 	@Override
-	public boolean islevelUp(Monster monster) {
+	public boolean isLevelUp(Monster monster) {
 		// TODO Auto-generated method stub
 		return false;
 	}

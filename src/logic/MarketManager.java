@@ -67,7 +67,7 @@ public class MarketManager {
 			}
 		}
 		for (int i = 3; i < 5; i++) {
-			if (Objects.isNull(objects.get(i)) && !objects.get(i).isFreez()) {
+			if (Objects.isNull(objects.get(i)) || !objects.get(i).isFreez()) {
 				objects.set(i, randomFood());
 			}
 		}
@@ -176,7 +176,7 @@ public class MarketManager {
 				money -= 3;
 				updateAfterManage();
 			} else {
-				if (monster.islevelUp(monsters.get(indexU))) {
+				if (monster.isLevelUp(monsters.get(indexU))) {
 					objects.set(indexL, null);
 					money -= 3;
 					updateAfterManage();
@@ -218,9 +218,9 @@ public class MarketManager {
 				int pic_num = objects.get(i).getId();
 				ImageView image;
 				if (i < 3) {
-					image = new ImageView(ResourceHolder.monster.get(pic_num));
+					image = new ImageView(ResourceHolder.getInstance().monster.get(pic_num));
 				} else {
-					image = new ImageView(ResourceHolder.food.get(pic_num));
+					image = new ImageView(ResourceHolder.getInstance().food.get(pic_num));
 				}
 				image.setFitHeight(48);
 				image.setFitWidth(48);
@@ -246,7 +246,7 @@ public class MarketManager {
 				board.get(i).setBackground();
 			} else {
 				int index = monsters.get(i).getId();
-				board.get(i).setBackground(ResourceHolder.monster.get(index));
+				board.get(i).setBackground(ResourceHolder.getInstance().monster.get(index));
 			}
 		}
 	}
