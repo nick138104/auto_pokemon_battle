@@ -3,6 +3,7 @@ package entity.base;
 import interfacepackage.IRenderable;
 import javafx.geometry.Point2D;
 import javafx.scene.canvas.GraphicsContext;
+import logic.BattleUtils;
 import resource.ResourceHolder;
 
 public class Monster extends Gameobject implements IRenderable {
@@ -12,6 +13,7 @@ public class Monster extends Gameobject implements IRenderable {
 	private int lifepoint;
 	private MonsterElement element;
 	private Point2D pos;
+	private boolean visible;
 
 	public Monster(String name, int attack, int lifepoint, MonsterElement element, int id) {
 		super(id);
@@ -20,6 +22,7 @@ public class Monster extends Gameobject implements IRenderable {
 		setLifepoint(lifepoint);
 		setElement(element);
 		pos = new Point2D(0, 0);
+		visible = true;
 	}
 
 	public void attack(Monster mon) {
@@ -29,6 +32,21 @@ public class Monster extends Gameobject implements IRenderable {
 
 	public Monster createCopy() {
 		return new Monster(getName(), getAttack(), getLifepoint(), getElement(), getId());
+	}
+
+	public void move(int side) {
+		// TODO Auto-generated method stub
+		double pos_x = pos.getX() + side * 10;
+		if (side == 1) {
+			if (pos_x > BattleUtils.POS_CENTER_LEFT) {
+				pos_x = BattleUtils.POS_CENTER_LEFT;
+			}
+		} else {
+			if (pos_x < BattleUtils.POS_CENTER_RIGHT) {
+				pos_x = BattleUtils.POS_CENTER_RIGHT;
+			}
+		}
+		pos = new Point2D(pos_x, pos.getY());
 	}
 
 	@Override
@@ -46,7 +64,16 @@ public class Monster extends Gameobject implements IRenderable {
 	@Override
 	public boolean isVisible() {
 		// TODO Auto-generated method stub
-		return true;
+		return visible;
+	}
+
+	public void setVisible(boolean visible) {
+		this.visible = visible;
+	}
+
+	@Override
+	public boolean isDead() {
+		return lifepoint <= 0;
 	}
 
 	public String getName() {

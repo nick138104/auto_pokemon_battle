@@ -25,13 +25,13 @@ public class RenderableHolder {
 		entities.add(entity);
 		Collections.sort(entities, comparator);
 	}
-//
-//	public void update() {
-//		for (int i = entities.size() - 1; i >= 0; i--) {
-//			if (entities.get(i).isDestroyed())
-//				entities.remove(i);
-//		}
-//	}
+
+	public void update() {
+		for (int i = entities.size() - 1; i >= 0; i--) {
+			if (!entities.get(i).isVisible())
+				entities.remove(i);
+		}
+	}
 
 	public static RenderableHolder getInstance() {
 		return instance;
@@ -40,4 +40,5 @@ public class RenderableHolder {
 	public ObservableList<IRenderable> getEntities() {
 		return entities;
 	}
+
 }

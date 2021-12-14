@@ -66,10 +66,6 @@ public class SceneManager {
 		StackPane root = new StackPane();
 		Canvas canvas = new Canvas(1050, 600);
 		graphicsContext = canvas.getGraphicsContext2D();
-		ImageView img = new ImageView(ResourceHolder.getInstance().background.get(1));
-		img.setFitWidth(1050);
-		img.setFitHeight(600);
-		root.getChildren().add(img);
 		root.getChildren().add(canvas);
 		return root;
 	}

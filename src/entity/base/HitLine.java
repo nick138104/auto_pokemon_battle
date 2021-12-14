@@ -4,9 +4,11 @@ import interfacepackage.IRenderable;
 import javafx.scene.canvas.GraphicsContext;
 
 public class HitLine extends Gameobject implements IRenderable {
+	private boolean visible;
 
 	public HitLine() {
 		super(-1);
+		visible = false;
 	}
 
 	@Override
@@ -23,6 +25,16 @@ public class HitLine extends Gameobject implements IRenderable {
 
 	@Override
 	public boolean isVisible() {
+		// TODO Auto-generated method stub
+		return visible;
+	}
+
+	public void setVisible(boolean visible) {
+		this.visible = visible;
+	}
+
+	@Override
+	public boolean isDead() {
 		// TODO Auto-generated method stub
 		return false;
 	}

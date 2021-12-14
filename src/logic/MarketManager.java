@@ -303,6 +303,7 @@ public class MarketManager {
 		updateMoney();
 		updateWin();
 		updateLife();
+		updateTooltip();
 		for (int i = 0; i < 5; i++) {
 			if (Objects.nonNull(objects.get(i))) {
 				int pic_num = objects.get(i).getId();
