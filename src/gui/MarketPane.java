@@ -6,6 +6,7 @@ import javafx.event.EventHandler;
 import javafx.geometry.Insets;
 import javafx.geometry.Pos;
 import javafx.scene.control.Button;
+import javafx.scene.control.Tooltip;
 import javafx.scene.image.ImageView;
 import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.Background;
@@ -17,6 +18,7 @@ import javafx.scene.layout.BorderWidths;
 import javafx.scene.layout.CornerRadii;
 import javafx.scene.layout.GridPane;
 import javafx.scene.paint.Color;
+import javafx.scene.text.Font;
 import logic.MarketManager;
 import resource.ResourceHolder;
 
@@ -57,8 +59,18 @@ public class MarketPane extends GridPane {
 			b.setBackground(new Background(new BackgroundFill(Color.WHITE, CornerRadii.EMPTY, Insets.EMPTY)));
 			b.setBorder(new Border(
 					new BorderStroke(Color.GRAY, BorderStrokeStyle.SOLID, CornerRadii.EMPTY, BorderWidths.DEFAULT)));
-			// setTooltip();
-			MarketManager.marketList.add(b);
+			//setTooltip();
+//			Tooltip tooltip = new Tooltip();
+//			tooltip.setFont(new Font(12));
+//			tooltip.setText(MarketManager.objects.get(i).toString());
+//			b.setOnMouseMoved((MouseEvent e) -> {
+//				if (b != null)
+//					tooltip.show(b, e.getScreenX(), e.getScreenY() + 10);
+//			});
+//			b.setOnMouseExited((MouseEvent e) -> {
+//				tooltip.hide();
+//			});
+//			MarketManager.marketList.add(b);
 		}
 		for (int i = 0; i < 5; i++) {
 			add(MarketManager.marketList.get(i), i, 0);

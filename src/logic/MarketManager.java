@@ -26,12 +26,15 @@ import javafx.collections.ObservableList;
 import javafx.geometry.Insets;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
+import javafx.scene.control.Tooltip;
 import javafx.scene.image.ImageView;
+import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.Background;
 import javafx.scene.layout.BackgroundFill;
 import javafx.scene.layout.CornerRadii;
 import javafx.scene.layout.Pane;
 import javafx.scene.paint.Color;
+import javafx.scene.text.Font;
 import resource.ResourceHolder;
 
 public class MarketManager {
@@ -200,6 +203,23 @@ public class MarketManager {
 			}
 		}
 	}
+	
+//	private void setTooltip() {
+//		for (int i =0; i<5; i++) {
+//			Tooltip tooltip = new Tooltip();
+//			tooltip.setFont(new Font(12));
+//			tooltip.setText(marketList.get(i).toString());
+//			this.marketList.get(i).setOnMouseMoved((MouseEvent e) -> {
+//				if (marketList.get(i) != null)
+//					tooltip.show(this.marketList.get(i), e.getScreenX(), e.getScreenY() + 10);
+//			});
+//			this.marketList.get(i).setOnMouseExited((MouseEvent e) -> {
+//				tooltip.hide();
+//			});
+//		}
+//	}
+	
+	
 
 	private static void updateAfterManage() {
 		updateMonster();

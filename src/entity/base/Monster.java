@@ -85,7 +85,7 @@ public class Monster extends Gameobject implements IRenderable {
 	public String toString() {
 		// TODO Auto-generated method stub
 		String monster = "Name : " + getName() + "\nAttack : " + getAttack() + "\nLifepoint : " + lifepoint
-				+ "\nElement : ";
+				+ "\nElement : " + getElement();
 		return monster;
 	}
 
