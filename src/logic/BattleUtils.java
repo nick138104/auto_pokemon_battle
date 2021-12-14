@@ -28,7 +28,7 @@ public class BattleUtils {
 		for (int i = 0; i < 5; i++) {
 			int randomIndex = rand.nextInt(num.size());
 			if (Objects.nonNull(MarketManager.monsters.get(randomIndex)))
-				addNewObject(MarketManager.monsters.get(randomIndex).createCopy());
+				//addNewObject(MarketManager.monsters.get(randomIndex).createCopy());
 			num.remove(randomIndex);
 		}
 		for (int i = 0; i < 12; i++) {
