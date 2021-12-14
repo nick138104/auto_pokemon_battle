@@ -45,13 +45,13 @@ public class MenuItem extends StackPane {
 		setOnMouseReleased(event -> {
 			bg.setFill(gradient);
 			if (name.equals("PLAY")) {
-				Main.primaryStage.setScene(SceneManager.game_scene);
+				Main.primaryStage.setScene(SceneManager.getInstance().game_scene);
 				MarketManager.startMarket();
 				MarketManager.updateMarket();
 				MarketManager.updateBoard();
-				ResourceHolder.music.get(0).stop();
-				ResourceHolder.music.get(0).play(0.1);
-				ResourceHolder.music.get(0).setCycleCount(MediaPlayer.INDEFINITE);
+				ResourceHolder.getInstance().music.get(0).stop();
+				ResourceHolder.getInstance().music.get(0).play(0.05);
+				ResourceHolder.getInstance().music.get(0).setCycleCount(MediaPlayer.INDEFINITE);
 			} else if (name.equals("HOW TO PLAY")) {
 				System.out.println("HOW TO PLAY SENCE");
 			} else {

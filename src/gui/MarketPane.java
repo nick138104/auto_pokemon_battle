@@ -49,9 +49,9 @@ public class MarketPane extends GridPane {
 			b.setMinHeight(60);
 			ImageView image;
 			if (i < 3) {
-				image = new ImageView(ResourceHolder.monster.get(pic_num));
+				image = new ImageView(ResourceHolder.getInstance().monster.get(pic_num));
 			} else {
-				image = new ImageView(ResourceHolder.food.get(pic_num));
+				image = new ImageView(ResourceHolder.getInstance().food.get(pic_num));
 			}
 			image.setFitHeight(48);
 			image.setFitWidth(48);

@@ -11,7 +11,7 @@ public class Bulbasaur extends Monster {
 	}
 
 	@Override
-	public boolean islevelUp(Monster monster) {
+	public boolean isLevelUp(Monster monster) {
 		if (monster.getName().equals("Bulbasaur")) {
 			monster.setName("Ivysaur");
 			monster.setAttack(getAttack() + 3);
@@ -28,4 +28,13 @@ public class Bulbasaur extends Monster {
 		return false;
 	}
 
+	public Monster createCopy() {
+		Monster mon = new Bulbasaur();
+		mon.setName(getName());
+		mon.setAttack(getAttack());
+		mon.setLifepoint(getLifepoint());
+		mon.setElement(getElement());
+		mon.setId(getId());
+		return mon;
+	}
 }

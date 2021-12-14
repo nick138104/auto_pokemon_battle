@@ -10,7 +10,7 @@ public class Torchic extends Monster{
 		// TODO Auto-generated constructor stub
 	}
 
-	public boolean islevelUp(Monster monster) {
+	public boolean isLevelUp(Monster monster) {
 		// TODO Auto-generated method stub
 		if (monster.getName().equals("Torchic")) {
 			monster.setName("Combusken");

@@ -38,7 +38,6 @@ public class MonsterCell extends Pane {
 		});
 		this.setBorder(new Border(
 				new BorderStroke(Color.LIGHTGRAY, BorderStrokeStyle.SOLID, CornerRadii.EMPTY, BorderWidths.EMPTY)));
-		// this.setUpTooltip();
 		setBackground();
 	}
 
@@ -47,7 +46,6 @@ public class MonsterCell extends Pane {
 		if (Objects.isNull(MarketManager.getSelectedButton()))
 			return;
 		int indexL = Integer.parseInt(MarketManager.getSelectedButton().getId());
-		// MarketManager.setSelectedCell(this);
 		MarketManager.manageMonster(indexL, indexU);
 	}
 

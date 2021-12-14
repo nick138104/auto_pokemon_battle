@@ -15,15 +15,26 @@ import javafx.scene.layout.StackPane;
 import resource.ResourceHolder;
 
 public class SceneManager {
-	private static final SceneManager instance = new SceneManager();
-	public static Scene menu_scene;
-	public static Scene game_scene;
-	public static Scene play_scene;
+	private static final SceneManager instance;
+	public Scene menu_scene;
+	public Scene game_scene;
+	public Scene play_scene;
+	public GraphicsContext graphicsContext;
+
+	static {
+		instance = new SceneManager();
+	}
+
+	public SceneManager() {
+		menu_scene = new Scene(createContent1());
+		game_scene = new Scene(createContent2());
+		play_scene = new Scene(createContent3());
+	}
 
 	private Parent createContent1() {
 		Pane root = new Pane();
 		root.setPrefSize(1050, 600);
-		ImageView img = new ImageView(ResourceHolder.background.get(0));
+		ImageView img = new ImageView(ResourceHolder.getInstance().background.get(0));
 		img.setFitWidth(1050);
 		img.setFitHeight(600);
 		root.getChildren().add(img);
@@ -40,7 +51,7 @@ public class SceneManager {
 	private Parent createContent2() {
 		Pane root = new Pane();
 		root.setPrefSize(1050, 600);
-		ImageView img = new ImageView(ResourceHolder.background.get(1));
+		ImageView img = new ImageView(ResourceHolder.getInstance().background.get(1));
 		img.setFitWidth(1050);
 		img.setFitHeight(600);
 		root.getChildren().add(img);
@@ -54,19 +65,13 @@ public class SceneManager {
 	private Parent createContent3() {
 		StackPane root = new StackPane();
 		Canvas canvas = new Canvas(1050, 600);
-		GraphicsContext gc = canvas.getGraphicsContext2D();
-		ImageView img = new ImageView(ResourceHolder.background.get(1));
+		graphicsContext = canvas.getGraphicsContext2D();
+		ImageView img = new ImageView(ResourceHolder.getInstance().background.get(1));
 		img.setFitWidth(1050);
 		img.setFitHeight(600);
 		root.getChildren().add(img);
 		root.getChildren().add(canvas);
 		return root;
-	}
-
-	public SceneManager() {
-		menu_scene = new Scene(createContent1());
-		game_scene = new Scene(createContent2());
-		play_scene = new Scene(createContent3());
 	}
 
 	public static SceneManager getInstance() {
