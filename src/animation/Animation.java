@@ -30,14 +30,16 @@ public class Animation {
 	}
 
 	public static void endBattleSence() {
-		ResourceHolder.getInstance().music.get(1).stop();
 		animation.stop();
+		ResourceHolder.getInstance().music.get(1).stop();
 		if (MarketManager.win == 5) {
+			ResourceHolder.getInstance().music.get(10).play(0.3);
 			Main.primaryStage.setScene(SceneManager.getInstance().win_scene);
-			ResourceHolder.getInstance().music.get().play(0.08);
+			return;
 		} else if (MarketManager.health == 0) {
+			ResourceHolder.getInstance().music.get(11).play(0.08);
 			Main.primaryStage.setScene(SceneManager.getInstance().lose_scene);
-			ResourceHolder.getInstance().music.get().play(0.08);
+			return;
 		}
 		Main.primaryStage.setScene(SceneManager.getInstance().game_scene);
 		ResourceHolder.getInstance().music.get(0).play(0.05);
