@@ -54,7 +54,7 @@ public class MenuItem extends StackPane {
 				ResourceHolder.getInstance().music.get(0).play(0.05);
 				ResourceHolder.getInstance().music.get(0).setCycleCount(MediaPlayer.INDEFINITE);
 			} else if (name.equals("HOW TO PLAY")) {
-				System.out.println("HOW TO PLAY SENCE");
+				Main.primaryStage.setScene(SceneManager.getInstance().how_to_play_scene);
 			} else {
 				Main.primaryStage.close();
 			}

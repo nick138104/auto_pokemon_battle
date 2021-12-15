@@ -36,6 +36,7 @@ public class ResourceHolder {
 		loadImage(background, "background_play.jpg");
 		loadImage(background, "background_win.jpg");
 		loadImage(background, "background_lose.jpg");
+		loadImage(background, "background_market.jpg");
 
 		loadImage(monster, "Bulbasaur1.png");
 		loadImage(monster, "Bulbasaur2.png");
