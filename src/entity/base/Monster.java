@@ -36,7 +36,7 @@ public class Monster extends Gameobject implements IRenderable {
 
 	public void move(int side) {
 		// TODO Auto-generated method stub
-		double pos_x = pos.getX() + side * 10;
+		double pos_x = pos.getX() + side * 9.5;
 		if (side == 1) {
 			if (pos_x > BattleUtils.POS_CENTER_LEFT) {
 				pos_x = BattleUtils.POS_CENTER_LEFT;
@@ -58,7 +58,7 @@ public class Monster extends Gameobject implements IRenderable {
 	@Override
 	public void draw(GraphicsContext gc) {
 		// TODO Auto-generated method stub
-		gc.drawImage(ResourceHolder.getInstance().monster.get(getId()), pos.getX(), pos.getY(), 65, 65);
+		gc.drawImage(ResourceHolder.getInstance().monster.get(getId()), pos.getX(), pos.getY(), 70, 70);
 	}
 
 	@Override
