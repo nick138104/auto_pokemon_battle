@@ -184,7 +184,7 @@ public class MarketManager {
 		} else if (indexL == 5) {
 			if (Objects.nonNull(monsters.get(indexU))) {
 				ResourceHolder.getInstance().music.get(7).stop();
-				ResourceHolder.getInstance().music.get(7).play();
+				ResourceHolder.getInstance().music.get(7).play(0.1);
 				monsters.set(indexU, null);
 				money += 1;
 				updateAfterManage();
