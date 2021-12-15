@@ -67,6 +67,7 @@ public class ResourceHolder {
 		loadImage(monster, "Turtwig1.png");
 		loadImage(monster, "Turtwig2.png");
 		loadImage(monster, "Turtwig3.png");
+		loadImage(monster, "hit_effect.png");
 
 		loadImage(food, "Cheri_Berry.png");
 		loadImage(food, "Chesto_Berry.png");
