@@ -255,10 +255,10 @@ public class MarketManager {
 			updateAllmonster(1, 0);
 			break;
 		case 4:
-			updateAllmonster(3, 1);
+			updateAllmonster(2, 0);
 			break;
 		case 5:
-			updateAllmonster(4, 2);
+			updateAllmonster(3, 1);
 			break;
 		default:
 			break;
@@ -272,10 +272,10 @@ public class MarketManager {
 			updateAllmonster(1, 0);
 			break;
 		case 4:
-			updateAllmonster(2, 2);
+			updateAllmonster(1, 1);
 			break;
 		case 5:
-			updateAllmonster(3, 3);
+			updateAllmonster(2, 2);
 			break;
 		default:
 			break;
@@ -289,10 +289,10 @@ public class MarketManager {
 			updateAllmonster(0, 1);
 			break;
 		case 4:
-			updateAllmonster(1, 3);
+			updateAllmonster(0, 2);
 			break;
 		case 5:
-			updateAllmonster(2, 4);
+			updateAllmonster(1, 3);
 			break;
 		default:
 			break;
