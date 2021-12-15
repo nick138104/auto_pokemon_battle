@@ -6,6 +6,7 @@ import java.util.List;
 import java.util.Objects;
 import java.util.Random;
 
+import animation.Animation;
 import entity.base.Gameobject;
 import entity.base.HitLine;
 import entity.base.Monster;
@@ -13,8 +14,10 @@ import interfacepackage.IRenderable;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.geometry.Point2D;
+import javafx.scene.media.MediaPlayer;
 import main.Main;
 import resource.RenderableHolder;
+import resource.ResourceHolder;
 import scenepackage.SceneManager;
 
 public class BattleUtils {
@@ -33,6 +36,10 @@ public class BattleUtils {
 		player = 0;
 		enemy = 0;
 		fightover = false;
+		RenderableHolder.getInstance().getEntities().clear();
+		playerMonster.clear();
+		enemyMonster.clear();
+		hitlineContainer.clear();
 		AITeam aiteam = new AITeam(MarketManager.win);
 		Random rand = new Random();
 		List<Integer> num = new ArrayList<>(Arrays.asList(0, 1, 2, 3, 4));
@@ -80,14 +87,19 @@ public class BattleUtils {
 
 	public void logicUpdate() {
 		// TODO Auto-generated method stub
-		if (fightover)
+		if (fightover) {
+			ResourceHolder.getInstance().music.get(1).stop();
+			Animation.endBattleSence();
 			return;
+		}
 		if (playerMonster.isEmpty() || enemyMonster.isEmpty()) {
 			if (!playerMonster.isEmpty()) {
 				if (enemyMonster.isEmpty()) {
 					MarketManager.win += 1;
 					Main.primaryStage.setScene(SceneManager.getInstance().game_scene);
 					fightover = true;
+					ResourceHolder.getInstance().music.get(0).play(0.05);
+					ResourceHolder.getInstance().music.get(0).setCycleCount(MediaPlayer.INDEFINITE);
 				}
 			} else {
 				if (!enemyMonster.isEmpty()) {
@@ -95,6 +107,8 @@ public class BattleUtils {
 				}
 				fightover = true;
 				Main.primaryStage.setScene(SceneManager.getInstance().game_scene);
+				ResourceHolder.getInstance().music.get(0).play(0.05);
+				ResourceHolder.getInstance().music.get(0).setCycleCount(MediaPlayer.INDEFINITE);
 			}
 			MarketManager.updateMarket();
 			return;
@@ -109,19 +123,17 @@ public class BattleUtils {
 				enemymonster.move(-1);
 			}
 		} else {
-			System.out.println("move fin");
-			if (playermonster.getLifepoint() <= 0 || enemymonster.getLifepoint() <= 0) {
-				if (playermonster.getLifepoint() <= 0) {
+			if (playermonster.isDead() || enemymonster.isDead()) {
+				if (playermonster.isDead()) {
 					playermonster.setVisible(false);
 					playerMonster.remove(0);
 				}
-				if (enemymonster.getLifepoint() <= 0) {
+				if (enemymonster.isDead()) {
 					enemymonster.setVisible(false);
 					enemyMonster.remove(0);
 				}
 			} else {
 				playermonster.attack(enemymonster);
-				System.out.println("attack");
 				// stop and play hit sound
 			}
 		}
