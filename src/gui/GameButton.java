@@ -51,11 +51,9 @@ public class GameButton {
 			@Override
 			public void handle(ActionEvent arg0) {
 				if (MarketManager.money > 0) {
+					MarketManager.money -= 1;
 					MarketManager.randomMarket();
 					MarketManager.updateMarket();
-					MarketManager.money -= 1;
-					MarketManager.updateMoney();
-					MarketManager.updateTooltip();
 				}
 			}
 		});
@@ -86,7 +84,6 @@ public class GameButton {
 			@Override
 			public void handle(ActionEvent arg0) {
 				MarketManager.setSelectedButton(sellButton);
-				MarketManager.updateTooltip();
 			}
 		});
 		buttons.add(sellButton);
@@ -100,10 +97,12 @@ public class GameButton {
 		playButton.setOnAction(new EventHandler<ActionEvent>() {
 			@Override
 			public void handle(ActionEvent arg0) {
+				MarketManager.money = 10;
 				ResourceHolder.getInstance().music.get(0).stop();
 				ResourceHolder.getInstance().music.get(1).play(0.4);
 				ResourceHolder.getInstance().music.get(1).setCycleCount(MediaPlayer.INDEFINITE);
 				Main.primaryStage.setScene(SceneManager.getInstance().play_scene);
+				MarketManager.randomMarket();
 				new Animation();
 			}
 		});

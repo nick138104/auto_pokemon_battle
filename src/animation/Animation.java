@@ -12,9 +12,10 @@ public class Animation {
 		logic.startBattle();
 		AnimationTimer animation = new AnimationTimer() {
 			public void handle(long now) {
+				
 				gameScreen.paintComponent();
-				// logic.logicUpdate();
-				// RenderableHolder.getInstance();
+				logic.logicUpdate();
+				RenderableHolder.getInstance().update();
 			}
 		};
 		animation.start();

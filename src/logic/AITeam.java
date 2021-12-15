@@ -1,31 +1,45 @@
-package entity;
+package logic;
 
 import java.util.ArrayList;
 
+import entity.Bulbasaur;
+import entity.Charmander;
+import entity.Chikorita;
+import entity.Chimchar;
+import entity.Cyndaquil;
+import entity.Magikarp;
+import entity.Mudkip;
+import entity.Pikachu;
+import entity.Piplup;
+import entity.Squirtle;
+import entity.Torchic;
+import entity.Totodile;
+import entity.Treecko;
+import entity.Turtwig;
 import entity.base.Monster;
 
 public class AITeam {
-	
-	private String name;
+
+	private int level;
 	private ArrayList<Monster> team;
-	
-	public AITeam(String name) {
+
+	public AITeam(int level) {
 		team = new ArrayList<Monster>();
-		setName(name);
+		this.level = level;
 		addMonsters();
 	}
-	
+
 	public void addMonsters() {
-		if (this.getName().equals("level1")) {
+		if (level == 0) {
 			team.add(new Bulbasaur());
 			team.add(new Charmander());
 			team.add(new Squirtle());
-		} else if(this.getName().equals("level2")) {
+		} else if (level == 1) {
 			team.add(new Pikachu());
 			team.add(new Chikorita());
 			team.add(new Cyndaquil());
 			team.add(new Totodile());
-		} else if(this.getName().equals("level3")) {
+		} else if (level == 2) {
 			Torchic torc = new Torchic();
 			torc.isLevelUp(torc);
 			Mudkip mudk = new Mudkip();
@@ -36,7 +50,7 @@ public class AITeam {
 			team.add(torc);
 			team.add(mudk);
 			team.add(new Pikachu());
-		} else if(this.getName().equals("level4")) {
+		} else if (level == 3) {
 			Chimchar chim = new Chimchar();
 			chim.isLevelUp(chim);
 			Piplup pip = new Piplup();
@@ -48,7 +62,7 @@ public class AITeam {
 			team.add(chim);
 			team.add(turt);
 			team.add(pip);
-		} else if(this.getName().equals("level5")) {
+		} else if (level == 4) {
 			Pikachu pika = new Pikachu();
 			pika.setAttack(10);
 			pika.setLifepoint(10);
@@ -69,19 +83,14 @@ public class AITeam {
 			team.add(turt);
 			team.add(pip);
 			team.add(magi);
-			
+
 		}
 		while (team.size() != 5) {
 			team.add(null);
 		}
 	}
 
-	public String getName() {
-		return name;
+	public ArrayList<Monster> getTeam() {
+		return team;
 	}
-
-	public void setName(String name) {
-		this.name = name;
-	}
-
 }
