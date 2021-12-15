@@ -82,7 +82,14 @@ public class SceneManager {
 		Pane root = new Pane();
 		root.setPrefSize(1050, 600);
 		// add win sence
-		// root.getChildren().add();
+		ImageView img = new ImageView(ResourceHolder.getInstance().background.get(2));
+		img.setFitWidth(1050);
+		img.setFitHeight(600);
+		MenuBox vbox = new MenuBox(new MenuItem("BACK"));
+		vbox.setTranslateX(410);
+		vbox.setTranslateY(500);
+		root.getChildren().add(img);
+		root.getChildren().add(vbox);
 		return root;
 	}
 
@@ -90,7 +97,14 @@ public class SceneManager {
 		Pane root = new Pane();
 		root.setPrefSize(1050, 600);
 		// add lost sence
-		// root.getChildren().add();
+		ImageView img = new ImageView(ResourceHolder.getInstance().background.get(3));
+		img.setFitWidth(1050);
+		img.setFitHeight(600);
+		MenuBox vbox = new MenuBox(new MenuItem("BACK"));
+		vbox.setTranslateX(410);
+		vbox.setTranslateY(500);
+		root.getChildren().add(img);
+		root.getChildren().add(vbox);
 		return root;
 	}
 
