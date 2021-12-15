@@ -46,6 +46,7 @@ public class GamePane {
 			statPane.add(MarketManager.statList.get(i), i, 0);
 			MarketManager.statList.get(i).setFont(new Font("Comic Sans MS", 25));
 			MarketManager.statList.get(i).setPadding(new Insets(0, 5, 0, 5));
+			MarketManager.statList.get(i).setTextFill(Color.WHEAT);
 		}
 		statPane.setTranslateX(50);
 		statPane.setTranslateY(15);

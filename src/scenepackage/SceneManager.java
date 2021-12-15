@@ -14,6 +14,11 @@ import javafx.scene.image.ImageView;
 import javafx.scene.layout.Pane;
 import javafx.scene.layout.StackPane;
 import javafx.scene.media.MediaPlayer;
+import javafx.scene.paint.Color;
+import javafx.scene.shape.Rectangle;
+import javafx.scene.text.Font;
+import javafx.scene.text.Text;
+import javafx.scene.text.TextAlignment;
 import main.Main;
 import resource.ResourceHolder;
 
@@ -24,6 +29,7 @@ public class SceneManager {
 	public Scene play_scene;
 	public Scene win_scene;
 	public Scene lose_scene;
+	public Scene how_to_play_scene;
 	public GraphicsContext graphicsContext;
 	public Animation animation;
 
@@ -37,6 +43,7 @@ public class SceneManager {
 		play_scene = new Scene(createContent3());
 		win_scene = new Scene(createContent4());
 		lose_scene = new Scene(createContent5());
+		how_to_play_scene = new Scene(createContent6());
 	}
 
 	private Parent createContent1() {
@@ -59,7 +66,7 @@ public class SceneManager {
 	private Parent createContent2() {
 		Pane root = new Pane();
 		root.setPrefSize(1050, 600);
-		ImageView img = new ImageView(ResourceHolder.getInstance().background.get(1));
+		ImageView img = new ImageView(ResourceHolder.getInstance().background.get(4));
 		img.setFitWidth(1050);
 		img.setFitHeight(600);
 		root.getChildren().add(img);
@@ -117,6 +124,37 @@ public class SceneManager {
 		});
 		root.getChildren().add(img);
 		root.getChildren().add(back_item);
+		return root;
+	}
+
+	private Parent createContent6() {
+		Pane root = new Pane();
+		root.setPrefSize(1050, 600);
+		ImageView img = new ImageView(ResourceHolder.getInstance().background.get(0));
+		img.setFitWidth(1050);
+		img.setFitHeight(600);
+		Title title = new Title("How To Play");
+		title.setTranslateX(365);
+		title.setTranslateY(150);
+		Rectangle rect = new Rectangle(820, 175);
+		rect.setTranslateX(115);
+		rect.setTranslateY(245);
+		rect.setOpacity(0.5);
+		rect.setFill(Color.WHITE);
+		Text massage = new Text("Auto Pokemon Battle is an auto battler game \nthat contains many "
+				+ "characters from the Pokemon series.\nIn this game, you have "
+				+ "to build your own team \n strengthen your Pokemon to defeat opponents.");
+		massage.setTranslateX(135);
+		massage.setTranslateY(280);
+		massage.setTextAlignment(TextAlignment.CENTER);
+		massage.setFont(new Font("Comic Sans MS", 30));
+		MenuItem back_item = new MenuItem("BACK");
+		back_item.setTranslateX(410);
+		back_item.setTranslateY(450);
+		back_item.setOnMouseReleased(event -> {
+			Main.primaryStage.setScene(SceneManager.getInstance().menu_scene);
+		});
+		root.getChildren().addAll(img, title, rect, massage, back_item);
 		return root;
 	}
 
