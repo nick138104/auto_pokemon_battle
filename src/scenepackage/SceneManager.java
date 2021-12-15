@@ -81,7 +81,6 @@ public class SceneManager {
 	private Parent createContent4() {
 		Pane root = new Pane();
 		root.setPrefSize(1050, 600);
-		// add win sence
 		ImageView img = new ImageView(ResourceHolder.getInstance().background.get(2));
 		img.setFitWidth(1050);
 		img.setFitHeight(600);
@@ -96,7 +95,6 @@ public class SceneManager {
 	private Parent createContent5() {
 		Pane root = new Pane();
 		root.setPrefSize(1050, 600);
-		// add lost sence
 		ImageView img = new ImageView(ResourceHolder.getInstance().background.get(3));
 		img.setFitWidth(1050);
 		img.setFitHeight(600);

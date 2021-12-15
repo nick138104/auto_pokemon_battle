@@ -13,11 +13,8 @@ import entity.base.Monster;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.geometry.Point2D;
-import javafx.scene.media.MediaPlayer;
-import main.Main;
 import resource.RenderableHolder;
 import resource.ResourceHolder;
-import scenepackage.SceneManager;
 
 public class BattleUtils {
 
@@ -105,19 +102,13 @@ public class BattleUtils {
 			if (!playerMonster.isEmpty()) {
 				if (enemyMonster.isEmpty()) {
 					MarketManager.win += 1;
-					Main.primaryStage.setScene(SceneManager.getInstance().game_scene);
 					fightover = true;
-					ResourceHolder.getInstance().music.get(0).play(0.05);
-					ResourceHolder.getInstance().music.get(0).setCycleCount(MediaPlayer.INDEFINITE);
 				}
 			} else {
 				if (!enemyMonster.isEmpty()) {
 					MarketManager.health -= 1;
 				}
 				fightover = true;
-				Main.primaryStage.setScene(SceneManager.getInstance().game_scene);
-				ResourceHolder.getInstance().music.get(0).play(0.05);
-				ResourceHolder.getInstance().music.get(0).setCycleCount(MediaPlayer.INDEFINITE);
 			}
 			MarketManager.updateMarket();
 			return;

@@ -1,6 +1,9 @@
 package animation;
 
 import interfacepackage.IRenderable;
+import javafx.scene.paint.Color;
+import javafx.scene.text.Font;
+import javafx.scene.text.FontWeight;
 import resource.RenderableHolder;
 import resource.ResourceHolder;
 import scenepackage.SceneManager;
@@ -21,3 +24,4 @@ public class GameScreen {
 			}
 		}
 	}
+}
