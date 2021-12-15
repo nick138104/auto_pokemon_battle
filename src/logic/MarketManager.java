@@ -20,7 +20,6 @@ import entity.Turtwig;
 import entity.base.Food;
 import entity.base.Gameobject;
 import entity.base.Monster;
-import entity.base.MonsterElement;
 import gui.MonsterCell;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
@@ -138,8 +137,6 @@ public class MarketManager {
 	public static void freezMarket() {
 		// can throw exception
 		if (Objects.isNull(selectedButton)) {
-			ResourceHolder.getInstance().music.get(5).stop();
-			ResourceHolder.getInstance().music.get(5).play();
 			return;
 		}
 		int index = Integer.parseInt(selectedButton.getId());
@@ -169,7 +166,6 @@ public class MarketManager {
 				monsters.set(indexU, monster);
 				objects.set(indexL, null);
 				money -= 3;
-				updateCombo(indexU);
 				updateAfterManage();
 			} else {
 				if (monster.isLevelUp(monsters.get(indexU))) {
@@ -226,86 +222,72 @@ public class MarketManager {
 		MarketManager.updateTooltip();
 	}
 
-	private static void updateCombo(int indexU) {
-		switch (monsters.get(indexU).getElement()) {
-		case FIRE:
-			updateFirecase();
-			return;
-		case WATER:
-			updeteWatercase();
-			return;
-		case PLANT:
-			updatePlantcase();
-			return;
+	public static void updateCombo() {
+		int water = 0;
+		int fire = 0;
+		int plant = 0;
+		for (Monster mon : monsters) {
+			if (Objects.nonNull(mon)) {
+				switch (mon.getElement()) {
+				case WATER:
+					water += 1;
+					break;
+				case FIRE:
+					fire += 1;
+					break;
+				case PLANT:
+					plant += 1;
+					break;
+				default:
+					break;
+				}
+			}
+		}
+		updatePlantcase(plant);
+		updeteWatercase(water);
+		updateFirecase(fire);
+	}
+
+	private static void updatePlantcase(int plant) {
+		// TODO Auto-generated method stub
+		switch (plant) {
+		case 3:
+			updateAllmonster(1, 0);
+		case 4:
+			updateAllmonster(3, 1);
+		case 5:
+			updateAllmonster(4, 2);
 		default:
 			return;
 		}
 	}
 
-	private static void updatePlantcase() {
+	private static void updeteWatercase(int water) {
 		// TODO Auto-generated method stub
-		int total = 0;
-		int attack = 0;
-		int life = 0;
-		for (Monster mon : monsters) {
-			if (Objects.nonNull(mon) && mon.getElement() == MonsterElement.PLANT) {
-				total += 1;
-			}
+		switch (water) {
+		case 3:
+			updateAllmonster(1, 0);
+		case 4:
+			updateAllmonster(2, 2);
+		case 5:
+			updateAllmonster(3, 3);
+		default:
+			return;
 		}
-		if (total == 3) {
-			attack = 1;
-		} else if (total == 4) {
-			attack = 3;
-			life = 1;
-		} else if (total == 5) {
-			attack = 4;
-			life = 2;
-		}
-		updateAllmonster(attack, life);
 	}
 
-	private static void updeteWatercase() {
+	private static void updateFirecase(int fire) {
 		// TODO Auto-generated method stub
-		int total = 0;
-		int attack = 0;
-		int life = 0;
-		for (Monster mon : monsters) {
-			if (Objects.nonNull(mon) && mon.getElement() == MonsterElement.WATER) {
-				total += 1;
-			}
+		switch (fire) {
+		case 3:
+			updateAllmonster(0, 1);
+		case 4:
+			updateAllmonster(1, 3);
+		case 5:
+			updateAllmonster(2, 4);
+		default:
+			return;
 		}
-		if (total == 3) {
-			attack = 1;
-		} else if (total == 4) {
-			attack = 2;
-			life = 2;
-		} else if (total == 5) {
-			attack = 3;
-			life = 3;
-		}
-		updateAllmonster(attack, life);
-	}
-
-	private static void updateFirecase() {
-		// TODO Auto-generated method stub
-		int total = 0;
-		int attack = 0;
-		int life = 0;
-		for (Monster mon : monsters) {
-			if (Objects.nonNull(mon) && mon.getElement() == MonsterElement.FIRE) {
-				total += 1;
-			}
-		}
-		if (total == 3) {
-			life = 1;
-		} else if (total == 4) {
-			attack = 1;
-			life = 3;
-		} else if (total == 5) {
-			attack = 2;
-			life = 4;
-		}
-		updateAllmonster(attack, life);
 	}
 
 	private static void updateAllmonster(int attack, int life) {

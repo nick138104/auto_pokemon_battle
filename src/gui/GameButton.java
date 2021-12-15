@@ -98,6 +98,7 @@ public class GameButton {
 		playButton.setOnAction(new EventHandler<ActionEvent>() {
 			@Override
 			public void handle(ActionEvent arg0) {
+				MarketManager.updateCombo();
 				MarketManager.money = 10;
 				ResourceHolder.getInstance().music.get(0).stop();
 				ResourceHolder.getInstance().music.get(1).play(0.135);
