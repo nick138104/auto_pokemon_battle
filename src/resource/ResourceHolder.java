@@ -12,6 +12,7 @@ public class ResourceHolder {
 	public ArrayList<Image> background = new ArrayList<Image>();
 	public ArrayList<AudioClip> music = new ArrayList<AudioClip>();
 	public ArrayList<Image> food = new ArrayList<Image>();
+	public Image hitline;
 
 	static {
 		instance = new ResourceHolder();
@@ -25,6 +26,9 @@ public class ResourceHolder {
 		loadAudioClip(music, "eat_sound.mp3");
 		loadAudioClip(music, "error_sound.mp3");
 		loadAudioClip(music, "levelup_sound.mp3");
+		loadAudioClip(music, "sell_sound.mp3");
+		loadAudioClip(music, "select_sound.mp3");
+		loadAudioClip(music, "buy_sound.mp3");
 
 		loadImage(background, "background_menu.png");
 		loadImage(background, "background_play.jpg");
@@ -69,7 +73,6 @@ public class ResourceHolder {
 		loadImage(monster, "Turtwig1.png");
 		loadImage(monster, "Turtwig2.png");
 		loadImage(monster, "Turtwig3.png");
-		loadImage(monster, "hit_effect.png");
 
 		loadImage(food, "Cheri_Berry.png");
 		loadImage(food, "Chesto_Berry.png");
@@ -78,6 +81,9 @@ public class ResourceHolder {
 		loadImage(food, "Aspear_Berry.png");
 		loadImage(food, "Leppa_Berry.png");
 		loadImage(food, "Oran_Berry.png");
+
+		hitline = new Image(ClassLoader.getSystemResource("hit_effect.png").toString());
+
 	}
 
 	public static ResourceHolder getInstance() {
