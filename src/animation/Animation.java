@@ -2,7 +2,6 @@ package animation;
 
 import javafx.animation.AnimationTimer;
 import logic.BattleUtils;
-import resource.RenderableHolder;
 import resource.ResourceHolder;
 
 public class Animation {
