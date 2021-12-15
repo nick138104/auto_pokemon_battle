@@ -1,8 +1,8 @@
 package entity.base;
 
-import interfacepackage.Consumeable;
+import interfacepackage.Consumable;
 
-public class Food extends Gameobject implements Consumeable {
+public class Food extends Gameobject implements Consumable {
 
 	private String name;
 	private int attackBonus;
