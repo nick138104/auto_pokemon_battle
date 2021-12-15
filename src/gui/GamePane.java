@@ -13,10 +13,10 @@ import javafx.scene.text.Font;
 import logic.MarketManager;
 
 public class GamePane {
-	GridPane statPane;
-	GridPane gamePane;
-	GridPane monsterPane;
-	GameButton gameButton;
+	private GridPane statPane;
+	private GridPane gamePane;
+	private GridPane monsterPane;
+	private GameButton gameButton;
 
 	public GamePane() {
 		gameButton = new GameButton();

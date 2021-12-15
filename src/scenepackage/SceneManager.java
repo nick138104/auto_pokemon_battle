@@ -13,6 +13,8 @@ import javafx.scene.control.Button;
 import javafx.scene.image.ImageView;
 import javafx.scene.layout.Pane;
 import javafx.scene.layout.StackPane;
+import javafx.scene.media.MediaPlayer;
+import main.Main;
 import resource.ResourceHolder;
 
 public class SceneManager {
@@ -81,30 +83,40 @@ public class SceneManager {
 	private Parent createContent4() {
 		Pane root = new Pane();
 		root.setPrefSize(1050, 600);
-		// add win sence
 		ImageView img = new ImageView(ResourceHolder.getInstance().background.get(2));
 		img.setFitWidth(1050);
 		img.setFitHeight(600);
-		MenuBox vbox = new MenuBox(new MenuItem("BACK"));
-		vbox.setTranslateX(410);
-		vbox.setTranslateY(500);
+		MenuItem back_item = new MenuItem("BACK");
+		back_item.setTranslateX(410);
+		back_item.setTranslateY(450);
+		back_item.setOnMouseReleased(event -> {
+			Main.primaryStage.setScene(SceneManager.getInstance().menu_scene);
+			ResourceHolder.getInstance().music.get(10).stop();
+			ResourceHolder.getInstance().music.get(0).play(0.08);
+			ResourceHolder.getInstance().music.get(0).setCycleCount(MediaPlayer.INDEFINITE);
+		});
 		root.getChildren().add(img);
-		root.getChildren().add(vbox);
+		root.getChildren().add(back_item);
 		return root;
 	}
 
 	private Parent createContent5() {
 		Pane root = new Pane();
 		root.setPrefSize(1050, 600);
-		// add lost sence
 		ImageView img = new ImageView(ResourceHolder.getInstance().background.get(3));
 		img.setFitWidth(1050);
 		img.setFitHeight(600);
-		MenuBox vbox = new MenuBox(new MenuItem("BACK"));
-		vbox.setTranslateX(410);
-		vbox.setTranslateY(500);
+		MenuItem back_item = new MenuItem("BACK");
+		back_item.setTranslateX(410);
+		back_item.setTranslateY(450);
+		back_item.setOnMouseReleased(event -> {
+			Main.primaryStage.setScene(SceneManager.getInstance().menu_scene);
+			ResourceHolder.getInstance().music.get(11).stop();
+			ResourceHolder.getInstance().music.get(0).play(0.08);
+			ResourceHolder.getInstance().music.get(0).setCycleCount(MediaPlayer.INDEFINITE);
+		});
 		root.getChildren().add(img);
-		root.getChildren().add(vbox);
+		root.getChildren().add(back_item);
 		return root;
 	}
 
