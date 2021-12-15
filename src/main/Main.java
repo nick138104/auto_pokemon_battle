@@ -12,7 +12,7 @@ public class Main extends Application {
 
 	@Override
 	public void start(Stage primaryStage) throws Exception {
-		ResourceHolder.getInstance().music.get(0).play(0.3);
+		ResourceHolder.getInstance().music.get(0).play(0.08);
 		ResourceHolder.getInstance().music.get(0).setCycleCount(MediaPlayer.INDEFINITE);
 		Main.primaryStage = primaryStage;
 		primaryStage.setTitle("Auto_Pokemon_Battle");

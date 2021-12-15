@@ -35,7 +35,7 @@ public class GameButton {
 			public void handle(ActionEvent arg0) {
 				Main.primaryStage.setScene(SceneManager.getInstance().menu_scene);
 				ResourceHolder.getInstance().music.get(0).stop();
-				ResourceHolder.getInstance().music.get(0).play(0.3);
+				ResourceHolder.getInstance().music.get(0).play(0.08);
 				ResourceHolder.getInstance().music.get(0).setCycleCount(MediaPlayer.INDEFINITE);
 			}
 		});
@@ -99,11 +99,10 @@ public class GameButton {
 			public void handle(ActionEvent arg0) {
 				MarketManager.money = 10;
 				ResourceHolder.getInstance().music.get(0).stop();
-				ResourceHolder.getInstance().music.get(1).play(0.4);
-				ResourceHolder.getInstance().music.get(1).setCycleCount(MediaPlayer.INDEFINITE);
+				ResourceHolder.getInstance().music.get(1).play(0.135);
 				Main.primaryStage.setScene(SceneManager.getInstance().play_scene);
 				MarketManager.randomMarket();
-				new Animation();
+				Animation.startBattleSence();
 			}
 		});
 		buttons.add(playButton);
