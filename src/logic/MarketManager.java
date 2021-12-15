@@ -253,12 +253,15 @@ public class MarketManager {
 		switch (plant) {
 		case 3:
 			updateAllmonster(1, 0);
+			break;
 		case 4:
 			updateAllmonster(3, 1);
+			break;
 		case 5:
 			updateAllmonster(4, 2);
+			break;
 		default:
-			return;
+			break;
 		}
 	}
 
@@ -267,12 +270,15 @@ public class MarketManager {
 		switch (water) {
 		case 3:
 			updateAllmonster(1, 0);
+			break;
 		case 4:
 			updateAllmonster(2, 2);
+			break;
 		case 5:
 			updateAllmonster(3, 3);
+			break;
 		default:
-			return;
+			break;
 		}
 	}
 
@@ -281,12 +287,15 @@ public class MarketManager {
 		switch (fire) {
 		case 3:
 			updateAllmonster(0, 1);
+			break;
 		case 4:
 			updateAllmonster(1, 3);
+			break;
 		case 5:
 			updateAllmonster(2, 4);
+			break;
 		default:
-			return;
+			break;
 		}
 	}
 
