@@ -66,7 +66,7 @@ public class SceneManager {
 	private Parent createContent2() {
 		Pane root = new Pane();
 		root.setPrefSize(1050, 600);
-		ImageView img = new ImageView(ResourceHolder.getInstance().background.get(1));
+		ImageView img = new ImageView(ResourceHolder.getInstance().background.get(4));
 		img.setFitWidth(1050);
 		img.setFitHeight(600);
 		root.getChildren().add(img);
