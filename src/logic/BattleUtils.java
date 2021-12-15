@@ -13,11 +13,8 @@ import entity.base.Monster;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.geometry.Point2D;
-import javafx.scene.media.MediaPlayer;
-import main.Main;
 import resource.RenderableHolder;
 import resource.ResourceHolder;
-import scenepackage.SceneManager;
 
 public class BattleUtils {
 
@@ -28,6 +25,10 @@ public class BattleUtils {
 	private int enemy;
 	private int count;
 	private boolean fightover;
+	public static int left_attack;
+	public static int left_health;
+	public static int right_attack;
+	public static int right_health;
 	public static final int POS_CENTER_LEFT = 455;
 	public static final int POS_CENTER_RIGHT = 535;
 
@@ -36,6 +37,10 @@ public class BattleUtils {
 		player = 0;
 		enemy = 0;
 		count = 0;
+		left_attack = -1;
+		left_health = -1;
+		right_attack = -1;
+		right_health = -1;
 		fightover = false;
 		RenderableHolder.getInstance().getEntities().clear();
 		playerMonster.clear();
@@ -105,25 +110,23 @@ public class BattleUtils {
 			if (!playerMonster.isEmpty()) {
 				if (enemyMonster.isEmpty()) {
 					MarketManager.win += 1;
-					Main.primaryStage.setScene(SceneManager.getInstance().game_scene);
 					fightover = true;
-					ResourceHolder.getInstance().music.get(0).play(0.05);
-					ResourceHolder.getInstance().music.get(0).setCycleCount(MediaPlayer.INDEFINITE);
 				}
 			} else {
 				if (!enemyMonster.isEmpty()) {
 					MarketManager.health -= 1;
 				}
 				fightover = true;
-				Main.primaryStage.setScene(SceneManager.getInstance().game_scene);
-				ResourceHolder.getInstance().music.get(0).play(0.05);
-				ResourceHolder.getInstance().music.get(0).setCycleCount(MediaPlayer.INDEFINITE);
 			}
 			MarketManager.updateMarket();
 			return;
 		}
 		Monster playermonster = playerMonster.get(0);
 		Monster enemymonster = enemyMonster.get(0);
+		left_attack = playermonster.getAttack();
+		left_health = playermonster.getLifepoint();
+		right_attack = enemymonster.getAttack();
+		right_health = enemymonster.getLifepoint();
 		if (playermonster.getPos().getX() != POS_CENTER_LEFT || enemymonster.getPos().getX() != POS_CENTER_RIGHT) {
 			hitlineContainer.get(0).setVisible(false);
 			hitlineContainer.get(1).setVisible(false);

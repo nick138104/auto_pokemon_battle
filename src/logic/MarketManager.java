@@ -160,8 +160,6 @@ public class MarketManager {
 	public static void manageMonster(int indexL, int indexU) {
 		if (indexL < 3) {
 			if (money < 3) {
-				ResourceHolder.getInstance().music.get(5).stop();
-				ResourceHolder.getInstance().music.get(5).play();
 				return;
 			}
 			Monster monster = (Monster) objects.get(indexL);
@@ -182,8 +180,6 @@ public class MarketManager {
 					updateAfterManage();
 					return;
 				}
-				ResourceHolder.getInstance().music.get(5).stop();
-				ResourceHolder.getInstance().music.get(5).play();
 			}
 		} else if (indexL == 5) {
 			if (Objects.nonNull(monsters.get(indexU))) {
@@ -194,12 +190,8 @@ public class MarketManager {
 				updateAfterManage();
 				return;
 			}
-			ResourceHolder.getInstance().music.get(5).stop();
-			ResourceHolder.getInstance().music.get(5).play();
 		} else {
 			if (money < 3) {
-				ResourceHolder.getInstance().music.get(5).stop();
-				ResourceHolder.getInstance().music.get(5).play();
 				return;
 			}
 			Food food = (Food) objects.get(indexL);
@@ -212,8 +204,6 @@ public class MarketManager {
 				updateAfterManage();
 				return;
 			}
-			ResourceHolder.getInstance().music.get(5).stop();
-			ResourceHolder.getInstance().music.get(5).play();
 		}
 	}
 
@@ -397,5 +387,4 @@ public class MarketManager {
 	public static void updateLife() {
 		statList.get(2).setText("Health : " + health);
 	}
-
 }

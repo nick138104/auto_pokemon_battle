@@ -26,11 +26,11 @@ public class ResourceHolder {
 		loadAudioClip(music, "eat_sound.mp3");
 		loadAudioClip(music, "error_sound.mp3");
 		loadAudioClip(music, "levelup_sound.mp3");
-		loadAudioClip(music, "music_win.mp3");
-		loadAudioClip(music, "music_lose.mp3");
 		loadAudioClip(music, "sell_sound.mp3");
 		loadAudioClip(music, "select_sound.mp3");
 		loadAudioClip(music, "buy_sound.mp3");
+		loadAudioClip(music, "music_win.mp3");
+		loadAudioClip(music, "music_lose.mp3");
 
 		loadImage(background, "background_menu.png");
 		loadImage(background, "background_play.jpg");
