@@ -1,10 +1,13 @@
 package entity.base;
 
 import interfacepackage.IRenderable;
+import javafx.geometry.Point2D;
 import javafx.scene.canvas.GraphicsContext;
+import resource.ResourceHolder;
 
 public class HitLine extends Gameobject implements IRenderable {
 	private boolean visible;
+	private Point2D pos;
 
 	public HitLine() {
 		super(-1);
@@ -14,13 +17,13 @@ public class HitLine extends Gameobject implements IRenderable {
 	@Override
 	public int getZ() {
 		// TODO Auto-generated method stub
-		return 10;
+		return 100;
 	}
 
 	@Override
 	public void draw(GraphicsContext gc) {
 		// TODO Auto-generated method stub
-
+		gc.drawImage(ResourceHolder.getInstance().hitline, pos.getX(), pos.getY(), 70, 70);
 	}
 
 	@Override
@@ -45,4 +48,11 @@ public class HitLine extends Gameobject implements IRenderable {
 		return null;
 	}
 
+	public Point2D getPos() {
+		return pos;
+	}
+
+	public void setPos(Point2D pos) {
+		this.pos = pos;
+	}
 }

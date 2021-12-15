@@ -119,7 +119,7 @@ public class MarketManager {
 		case 0:
 			return new Food("Cheri Berry", 1, 1, 0);
 		case 1:
-			return new Food("Chesto Berry", 2, 0, 0);
+			return new Food("Chesto Berry", 2, 0, 1);
 		case 2:
 			return new Food("Pecha Berry", 0, 2, 2);
 		case 3:
@@ -137,9 +137,14 @@ public class MarketManager {
 
 	public static void freezMarket() {
 		// can throw exception
-		if (Objects.isNull(selectedButton))
+		if (Objects.isNull(selectedButton)) {
+			ResourceHolder.getInstance().music.get(5).stop();
+			ResourceHolder.getInstance().music.get(5).play();
 			return;
+		}
 		int index = Integer.parseInt(selectedButton.getId());
+		if (index == 5)
+			return;
 		objects.get(index).setFreez(!objects.get(index).isFreez());
 		if (objects.get(index).isFreez()) {
 			marketList.get(index).setBackground(
@@ -148,14 +153,21 @@ public class MarketManager {
 			marketList.get(index).setBackground(
 					new Background(new BackgroundFill(Color.LIMEGREEN, CornerRadii.EMPTY, Insets.EMPTY)));
 		}
+		ResourceHolder.getInstance().music.get(3).stop();
+		ResourceHolder.getInstance().music.get(3).play();
 	}
 
 	public static void manageMonster(int indexL, int indexU) {
 		if (indexL < 3) {
-			if (money < 3)
+			if (money < 3) {
+				ResourceHolder.getInstance().music.get(5).stop();
+				ResourceHolder.getInstance().music.get(5).play();
 				return;
+			}
 			Monster monster = (Monster) objects.get(indexL);
 			if (Objects.isNull(monsters.get(indexU))) {
+				ResourceHolder.getInstance().music.get(9).stop();
+				ResourceHolder.getInstance().music.get(9).play();
 				monsters.set(indexU, monster);
 				objects.set(indexL, null);
 				money -= 3;
@@ -163,28 +175,45 @@ public class MarketManager {
 				updateAfterManage();
 			} else {
 				if (monster.isLevelUp(monsters.get(indexU))) {
+					ResourceHolder.getInstance().music.get(6).stop();
+					ResourceHolder.getInstance().music.get(6).play();
 					objects.set(indexL, null);
 					money -= 3;
-					updateCombo(indexU);
 					updateAfterManage();
+					return;
 				}
+				ResourceHolder.getInstance().music.get(5).stop();
+				ResourceHolder.getInstance().music.get(5).play();
 			}
 		} else if (indexL == 5) {
 			if (Objects.nonNull(monsters.get(indexU))) {
+				ResourceHolder.getInstance().music.get(7).stop();
+				ResourceHolder.getInstance().music.get(7).play();
 				monsters.set(indexU, null);
 				money += 1;
 				updateAfterManage();
-			}
-		} else {
-			if (money < 3)
 				return;
+			}
+			ResourceHolder.getInstance().music.get(5).stop();
+			ResourceHolder.getInstance().music.get(5).play();
+		} else {
+			if (money < 3) {
+				ResourceHolder.getInstance().music.get(5).stop();
+				ResourceHolder.getInstance().music.get(5).play();
+				return;
+			}
 			Food food = (Food) objects.get(indexL);
 			if (Objects.nonNull(monsters.get(indexU))) {
+				ResourceHolder.getInstance().music.get(4).stop();
+				ResourceHolder.getInstance().music.get(4).play();
 				food.eatFood(monsters.get(indexU));
 				objects.set(indexL, null);
 				money -= 3;
 				updateAfterManage();
+				return;
 			}
+			ResourceHolder.getInstance().music.get(5).stop();
+			ResourceHolder.getInstance().music.get(5).play();
 		}
 	}
 

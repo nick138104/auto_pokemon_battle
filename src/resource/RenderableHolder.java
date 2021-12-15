@@ -26,13 +26,6 @@ public class RenderableHolder {
 		Collections.sort(entities, comparator);
 	}
 
-	public void update() {
-		for (int i = entities.size() - 1; i >= 0; i--) {
-			if (!entities.get(i).isVisible())
-				entities.remove(i);
-		}
-	}
-
 	public static RenderableHolder getInstance() {
 		return instance;
 	}

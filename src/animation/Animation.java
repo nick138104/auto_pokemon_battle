@@ -3,6 +3,7 @@ package animation;
 import javafx.animation.AnimationTimer;
 import logic.BattleUtils;
 import resource.RenderableHolder;
+import resource.ResourceHolder;
 
 public class Animation {
 	private static GameScreen gameScreen;
@@ -20,13 +21,13 @@ public class Animation {
 			public void handle(long now) {
 				gameScreen.paintComponent();
 				logic.logicUpdate();
-				RenderableHolder.getInstance().update();
 			}
 		};
 		animation.start();
 	}
 
 	public static void endBattleSence() {
+		ResourceHolder.getInstance().music.get(1).stop();
 		animation.stop();
 	}
 }

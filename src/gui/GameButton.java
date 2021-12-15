@@ -51,6 +51,7 @@ public class GameButton {
 			@Override
 			public void handle(ActionEvent arg0) {
 				if (MarketManager.money > 0) {
+					ResourceHolder.getInstance().music.get(9).play();
 					MarketManager.money -= 1;
 					MarketManager.randomMarket();
 					MarketManager.updateMarket();

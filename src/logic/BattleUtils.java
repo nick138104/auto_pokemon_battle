@@ -10,7 +10,6 @@ import animation.Animation;
 import entity.base.Gameobject;
 import entity.base.HitLine;
 import entity.base.Monster;
-import interfacepackage.IRenderable;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.geometry.Point2D;
@@ -22,11 +21,12 @@ import scenepackage.SceneManager;
 
 public class BattleUtils {
 
-	private ObservableList<IRenderable> playerMonster = FXCollections.observableArrayList();
-	private ObservableList<IRenderable> enemyMonster = FXCollections.observableArrayList();
-	private ObservableList<IRenderable> hitlineContainer = FXCollections.observableArrayList();
+	private ObservableList<Monster> playerMonster = FXCollections.observableArrayList();
+	private ObservableList<Monster> enemyMonster = FXCollections.observableArrayList();
+	private ObservableList<HitLine> hitlineContainer = FXCollections.observableArrayList();
 	private int player;
 	private int enemy;
+	private int count;
 	private boolean fightover;
 	public static final int POS_CENTER_LEFT = 455;
 	public static final int POS_CENTER_RIGHT = 535;
@@ -35,6 +35,7 @@ public class BattleUtils {
 		// TODO Auto-generated method stub
 		player = 0;
 		enemy = 0;
+		count = 0;
 		fightover = false;
 		RenderableHolder.getInstance().getEntities().clear();
 		playerMonster.clear();
@@ -63,9 +64,12 @@ public class BattleUtils {
 			}
 			num.remove(randomIndex);
 		}
-		for (int i = 0; i < 12; i++) {
-			// addNewObject(new HitLine());
-		}
+		HitLine hitline1 = new HitLine();
+		HitLine hitline2 = new HitLine();
+		hitline1.setPos(new Point2D(POS_CENTER_LEFT, 400));
+		hitline2.setPos(new Point2D(POS_CENTER_RIGHT, 400));
+		addNewObject(hitline1);
+		addNewObject(hitline2);
 	}
 
 	protected void addNewObject(Gameobject object) {
@@ -88,9 +92,14 @@ public class BattleUtils {
 	public void logicUpdate() {
 		// TODO Auto-generated method stub
 		if (fightover) {
-			ResourceHolder.getInstance().music.get(1).stop();
 			Animation.endBattleSence();
 			return;
+		}
+		if (count != 1) {
+			count += 1;
+			return;
+		} else {
+			count = 0;
 		}
 		if (playerMonster.isEmpty() || enemyMonster.isEmpty()) {
 			if (!playerMonster.isEmpty()) {
@@ -113,9 +122,11 @@ public class BattleUtils {
 			MarketManager.updateMarket();
 			return;
 		}
-		Monster playermonster = (Monster) playerMonster.get(0);
-		Monster enemymonster = (Monster) enemyMonster.get(0);
+		Monster playermonster = playerMonster.get(0);
+		Monster enemymonster = enemyMonster.get(0);
 		if (playermonster.getPos().getX() != POS_CENTER_LEFT || enemymonster.getPos().getX() != POS_CENTER_RIGHT) {
+			hitlineContainer.get(0).setVisible(false);
+			hitlineContainer.get(1).setVisible(false);
 			if (playermonster.getPos().getX() != POS_CENTER_LEFT) {
 				playermonster.move(1);
 			}
@@ -134,7 +145,9 @@ public class BattleUtils {
 				}
 			} else {
 				playermonster.attack(enemymonster);
-				// stop and play hit sound
+				hitlineContainer.get(0).setVisible(true);
+				hitlineContainer.get(1).setVisible(true);
+				ResourceHolder.getInstance().music.get(2).play();
 			}
 		}
 	}
