@@ -33,11 +33,11 @@ public class Animation {
 		animation.stop();
 		ResourceHolder.getInstance().music.get(1).stop();
 		if (MarketManager.win == 5) {
-			ResourceHolder.getInstance().music.get(10).play(0.3);
+			ResourceHolder.getInstance().music.get(10).play(0.7);
 			Main.primaryStage.setScene(SceneManager.getInstance().win_scene);
 			return;
 		} else if (MarketManager.health == 0) {
-			ResourceHolder.getInstance().music.get(11).play(0.08);
+			ResourceHolder.getInstance().music.get(11).play(0.2);
 			Main.primaryStage.setScene(SceneManager.getInstance().lose_scene);
 			return;
 		}

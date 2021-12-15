@@ -150,7 +150,7 @@ public class BattleUtils {
 				playermonster.attack(enemymonster);
 				hitlineContainer.get(0).setVisible(true);
 				hitlineContainer.get(1).setVisible(true);
-				ResourceHolder.getInstance().music.get(2).play();
+				ResourceHolder.getInstance().music.get(2).play(0.3);
 			}
 		}
 	}

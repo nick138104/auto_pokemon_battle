@@ -39,6 +39,7 @@ public class AITeam {
 			team.add(new Chikorita());
 			team.add(new Cyndaquil());
 			team.add(new Totodile());
+			team.add(new Magikarp());
 		} else if (level == 2) {
 			Torchic torc = new Torchic();
 			torc.isLevelUp(torc);
@@ -50,12 +51,16 @@ public class AITeam {
 			team.add(torc);
 			team.add(mudk);
 			team.add(new Pikachu());
+			team.add(new Magikarp());
 		} else if (level == 3) {
 			Chimchar chim = new Chimchar();
 			chim.isLevelUp(chim);
+			chim.isLevelUp(chim);
 			Piplup pip = new Piplup();
 			pip.isLevelUp(pip);
+			pip.isLevelUp(pip);
 			Turtwig turt = new Turtwig();
+			turt.isLevelUp(turt);
 			turt.isLevelUp(turt);
 			team.add(new Pikachu());
 			team.add(new Magikarp());
@@ -64,20 +69,26 @@ public class AITeam {
 			team.add(pip);
 		} else if (level == 4) {
 			Pikachu pika = new Pikachu();
-			pika.setAttack(10);
-			pika.setLifepoint(10);
+			pika.setAttack(20);
+			pika.setLifepoint(20);
 			Chimchar chim = new Chimchar();
 			chim.isLevelUp(chim);
 			chim.isLevelUp(chim);
+			chim.setAttack(20);
+			chim.setLifepoint(15);
 			Piplup pip = new Piplup();
 			pip.isLevelUp(pip);
 			pip.isLevelUp(pip);
+			pip.setAttack(15);
+			pip.setLifepoint(20);
 			Turtwig turt = new Turtwig();
 			turt.isLevelUp(turt);
 			turt.isLevelUp(turt);
+			turt.setLifepoint(10);
+			turt.setLifepoint(25);
 			Magikarp magi = new Magikarp();
-			magi.setAttack(6);
-			magi.setLifepoint(14);
+			magi.setAttack(10);
+			magi.setLifepoint(30);
 			team.add(pika);
 			team.add(chim);
 			team.add(turt);

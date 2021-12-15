@@ -2,9 +2,8 @@ package entity;
 
 import entity.base.Monster;
 import entity.base.MonsterElement;
-import interfacepackage.PreRoundActable;
 
-public class Magikarp extends Monster implements PreRoundActable {
+public class Magikarp extends Monster {
 
 	public Magikarp() {
 		super("Gyarodos", 4, 6, MonsterElement.WATER, 15);
