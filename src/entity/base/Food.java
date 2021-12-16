@@ -11,8 +11,8 @@ public class Food extends Gameobject implements Consumable {
 	public Food(String name, int attackBonus, int lifePointBonus, int id) {
 		super(id);
 		setName(name);
-		this.attackBonus = attackBonus;
-		this.lifePointBonus = lifePointBonus;
+		setAttackBonus(attackBonus);
+		setLifePointBonus(lifePointBonus);
 	}
 
 	public void eatFood(Monster monster) {
@@ -44,9 +44,7 @@ public class Food extends Gameobject implements Consumable {
 		this.name = name;
 	}
 
-	@Override
 	public String toString() {
-		// TODO Auto-generated method stub
 		String food = "Name : " + getName() + "\nAttack Bonus : " + getAttackBonus() + "\nLifepoint Bonus : "
 				+ getLifePointBonus();
 		return food;

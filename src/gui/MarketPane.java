@@ -28,14 +28,12 @@ public class MarketPane extends GridPane {
 		setAlignment(Pos.CENTER);
 		setHgap(10);
 		setVgap(10);
-
 		for (int i = 0; i < 5; i++) {
 			int pic_num = MarketManager.objects.get(i).getId();
 			Button b = new Button();
 			b.setId("" + i);
 			int index = Integer.parseInt(b.getId());
 			b.addEventHandler(MouseEvent.MOUSE_CLICKED, new EventHandler<MouseEvent>() {
-				@Override
 				public void handle(MouseEvent e) {
 					if (Objects.nonNull(MarketManager.objects.get(index))) {
 						resetButtonsBackGroundColor();
@@ -77,7 +75,7 @@ public class MarketPane extends GridPane {
 		}
 	}
 
-	public void highlight(int index) { // TODO
+	public void highlight(int index) {
 		Background n = new Background(new BackgroundFill(Color.LIMEGREEN, CornerRadii.EMPTY, Insets.EMPTY));
 		if (MarketManager.objects.get(index).isFreez()) {
 			n = new Background(new BackgroundFill(Color.LIGHTBLUE, CornerRadii.EMPTY, Insets.EMPTY));
@@ -85,7 +83,7 @@ public class MarketPane extends GridPane {
 		MarketManager.marketList.get(index).setBackground(n);
 	}
 
-	public void resetButtonsBackGroundColor() { // TODO
+	public void resetButtonsBackGroundColor() {
 		for (int i = 0; i < 5; i++) {
 			Background n = new Background(new BackgroundFill(Color.WHITE, CornerRadii.EMPTY, Insets.EMPTY));
 			if (Objects.nonNull(MarketManager.objects.get(i)) && MarketManager.objects.get(i).isFreez()) {
@@ -94,5 +92,4 @@ public class MarketPane extends GridPane {
 			MarketManager.marketList.get(i).setBackground(n);
 		}
 	}
-
 }

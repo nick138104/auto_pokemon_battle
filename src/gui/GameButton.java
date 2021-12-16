@@ -31,7 +31,6 @@ public class GameButton {
 		backButton.setPrefWidth(70);
 		backButton.setPrefHeight(30);
 		backButton.setOnAction(new EventHandler<ActionEvent>() {
-			@Override
 			public void handle(ActionEvent arg0) {
 				Main.primaryStage.setScene(SceneManager.getInstance().menu_scene);
 				ResourceHolder.getInstance().music.get(0).stop();
@@ -48,7 +47,6 @@ public class GameButton {
 		randomButton.setMinWidth(90);
 		randomButton.setPrefHeight(30);
 		randomButton.setOnAction(new EventHandler<ActionEvent>() {
-			@Override
 			public void handle(ActionEvent arg0) {
 				if (MarketManager.money > 0) {
 					ResourceHolder.getInstance().music.get(9).play();
@@ -62,12 +60,11 @@ public class GameButton {
 	}
 
 	private void initializeFreezButton() {
-		Button freezButton = new Button("FREEZ");
+		Button freezButton = new Button("FREEZE");
 		freezButton.setFont(new Font("Serif", 16));
 		freezButton.setMinWidth(90);
 		freezButton.setPrefHeight(30);
 		freezButton.setOnAction(new EventHandler<ActionEvent>() {
-			@Override
 			public void handle(ActionEvent arg0) {
 				MarketManager.freezMarket();
 			}
@@ -82,7 +79,6 @@ public class GameButton {
 		sellButton.setPrefHeight(30);
 		sellButton.setId("5");
 		sellButton.setOnAction(new EventHandler<ActionEvent>() {
-			@Override
 			public void handle(ActionEvent arg0) {
 				MarketManager.setSelectedButton(sellButton);
 			}
@@ -96,7 +92,6 @@ public class GameButton {
 		playButton.setMinWidth(90);
 		playButton.setPrefHeight(30);
 		playButton.setOnAction(new EventHandler<ActionEvent>() {
-			@Override
 			public void handle(ActionEvent arg0) {
 				MarketManager.updateCombo();
 				MarketManager.money = 10;

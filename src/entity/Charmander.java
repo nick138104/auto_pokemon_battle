@@ -7,11 +7,9 @@ public class Charmander extends Monster {
 
 	public Charmander() {
 		super("Charmander", 4, 2, MonsterElement.FIRE, 3);
-		// TODO Auto-generated constructor stub
 	}
 
 	public boolean isLevelUp(Monster monster) {
-		// TODO Auto-generated method stub
 		if (monster.getName().equals("Charmander")) {
 			monster.setName("Charmeleon");
 			monster.setAttack(monster.getAttack() + 3);
@@ -27,5 +25,4 @@ public class Charmander extends Monster {
 		}
 		return false;
 	}
-
 }

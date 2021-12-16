@@ -7,10 +7,8 @@ public class Bulbasaur extends Monster {
 
 	public Bulbasaur() {
 		super("Bulbasaur", 3, 3, MonsterElement.PLANT, 0);
-		// TODO Auto-generated constructor stub
 	}
 
-	@Override
 	public boolean isLevelUp(Monster monster) {
 		if (monster.getName().equals("Bulbasaur")) {
 			monster.setName("Ivysaur");

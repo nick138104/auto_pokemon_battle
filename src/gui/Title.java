@@ -10,13 +10,11 @@ import javafx.scene.text.Text;
 public class Title extends StackPane {
 
 	public Title(String name) {
-
 		Text text = new Text(name);
 		text.setFill(Color.BLACK);
 		text.setFont(Font.font("Comic Sans MS", FontWeight.SEMI_BOLD, 55));
 		text.setStroke(Color.BLANCHEDALMOND);
 		text.setStrokeWidth(2);
-
 		setAlignment(Pos.CENTER);
 		getChildren().add(text);
 	}

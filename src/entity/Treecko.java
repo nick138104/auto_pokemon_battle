@@ -7,11 +7,9 @@ public class Treecko extends Monster {
 
 	public Treecko() {
 		super("Treecko", 6, 4, MonsterElement.PLANT, 32);
-		// TODO Auto-generated constructor stub
 	}
 
 	public boolean isLevelUp(Monster monster) {
-		// TODO Auto-generated method stub
 		if (monster.getName().equals("Treecko")) {
 			monster.setName("Grovyle");
 			monster.setAttack(monster.getAttack() + 2);
@@ -26,15 +24,5 @@ public class Treecko extends Monster {
 			return true;
 		}
 		return false;
-	}
-
-	public Monster createCopy() {
-		Monster mon = new Treecko();
-		mon.setName(getName());
-		mon.setAttack(getAttack());
-		mon.setLifepoint(getLifepoint());
-		mon.setElement(getElement());
-		mon.setId(getId());
-		return mon;
 	}
 }

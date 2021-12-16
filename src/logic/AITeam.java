@@ -7,7 +7,7 @@ import entity.Charmander;
 import entity.Chikorita;
 import entity.Chimchar;
 import entity.Cyndaquil;
-import entity.Magikarp;
+import entity.Gyarados;
 import entity.Mudkip;
 import entity.Pikachu;
 import entity.Piplup;
@@ -45,7 +45,7 @@ public class AITeam {
 			team.add(chi);
 			team.add(cyn);
 			team.add(toto);
-			team.add(new Magikarp());
+			team.add(new Gyarados());
 		} else if (level == 2) {
 			Torchic torc = new Torchic();
 			torc.isLevelUp(torc);
@@ -60,7 +60,7 @@ public class AITeam {
 			team.add(torc);
 			team.add(mudk);
 			team.add(new Pikachu());
-			team.add(new Magikarp());
+			team.add(new Gyarados());
 		} else if (level == 3) {
 			Chimchar chim = new Chimchar();
 			chim.setAttack(12);
@@ -78,7 +78,7 @@ public class AITeam {
 			turt.isLevelUp(turt);
 			turt.isLevelUp(turt);
 			team.add(new Pikachu());
-			team.add(new Magikarp());
+			team.add(new Gyarados());
 			team.add(chim);
 			team.add(turt);
 			team.add(pip);
@@ -101,7 +101,7 @@ public class AITeam {
 			turt.isLevelUp(turt);
 			turt.setLifepoint(15);
 			turt.setLifepoint(30);
-			Magikarp magi = new Magikarp();
+			Gyarados magi = new Gyarados();
 			magi.setAttack(10);
 			magi.setLifepoint(60);
 			team.add(pika);
@@ -109,7 +109,6 @@ public class AITeam {
 			team.add(turt);
 			team.add(pip);
 			team.add(magi);
-
 		}
 		while (team.size() != 5) {
 			team.add(null);

@@ -7,7 +7,6 @@ public class Pikachu extends Monster {
 
 	public Pikachu() {
 		super("Pikachu", 5, 5, MonsterElement.ELECTRIC, 19);
-		// TODO Auto-generated constructor stub
 	}
 
 	public void preRoundActs() {
@@ -16,9 +15,7 @@ public class Pikachu extends Monster {
 
 	}
 
-	@Override
 	public boolean isLevelUp(Monster monster) {
-		// TODO Auto-generated method stub
 		return false;
 	}
 

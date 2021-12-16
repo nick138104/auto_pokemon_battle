@@ -1,16 +1,16 @@
 package entity.base;
 
 public abstract class Gameobject {
-	
+
 	private boolean isFreez;
 	private int id;
 
 	public Gameobject(int id) {
 		super();
-		this.isFreez = false;
-		this.id = id;
+		setFreez(false);
+		setId(id);
 	}
-	
+
 	public boolean isFreez() {
 		return isFreez;
 	}
@@ -18,7 +18,7 @@ public abstract class Gameobject {
 	public void setFreez(boolean isFreez) {
 		this.isFreez = isFreez;
 	}
-	
+
 	public int getId() {
 		return id;
 	}
@@ -27,6 +27,5 @@ public abstract class Gameobject {
 		this.id = id;
 	}
 
-	@Override
 	public abstract String toString();
 }

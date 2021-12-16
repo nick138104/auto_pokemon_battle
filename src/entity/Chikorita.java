@@ -7,12 +7,9 @@ public class Chikorita extends Monster {
 
 	public Chikorita() {
 		super("Chikorita", 3, 5, MonsterElement.PLANT, 6);
-		// TODO Auto-generated constructor stub
 	}
 
-	@Override
 	public boolean isLevelUp(Monster monster) {
-		// TODO Auto-generated method stub
 		if (monster.getName().equals("Chikorita")) {
 			monster.setName("Bayleef");
 			monster.setAttack(monster.getAttack() + 2);
@@ -28,5 +25,4 @@ public class Chikorita extends Monster {
 		}
 		return false;
 	}
-
 }

@@ -7,12 +7,9 @@ public class Turtwig extends Monster {
 
 	public Turtwig() {
 		super("Turtwig", 5, 7, MonsterElement.PLANT, 35);
-		// TODO Auto-generated constructor stub
 	}
 
-	@Override
 	public boolean isLevelUp(Monster monster) {
-		// TODO Auto-generated method stub
 		if (monster.getName().equals("Turtwig")) {
 			monster.setName("Grotle");
 			monster.setAttack(monster.getAttack() + 1);
@@ -27,15 +24,5 @@ public class Turtwig extends Monster {
 			return true;
 		}
 		return false;
-	}
-
-	public Monster createCopy() {
-		Monster mon = new Turtwig();
-		mon.setName(getName());
-		mon.setAttack(getAttack());
-		mon.setLifepoint(getLifepoint());
-		mon.setElement(getElement());
-		mon.setId(getId());
-		return mon;
 	}
 }

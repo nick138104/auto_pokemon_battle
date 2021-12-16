@@ -7,11 +7,9 @@ public class Mudkip extends Monster {
 
 	public Mudkip() {
 		super("Mudkip", 4, 6, MonsterElement.WATER, 16);
-		// TODO Auto-generated constructor stub
 	}
 
 	public boolean isLevelUp(Monster monster) {
-		// TODO Auto-generated method stub
 		if (monster.getName().equals("Mudkip")) {
 			monster.setName("Marshtomp");
 			monster.setAttack(monster.getAttack() + 2);

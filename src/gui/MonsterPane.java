@@ -17,7 +17,6 @@ import logic.MarketManager;
 public class MonsterPane extends GridPane {
 
 	public MonsterPane() {
-		// TODO complete the FieldPane's constructor
 		setPrefWidth(500);
 		setAlignment(Pos.CENTER);
 		setVgap(12);

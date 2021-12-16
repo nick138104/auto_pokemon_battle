@@ -7,11 +7,9 @@ public class Totodile extends Monster {
 
 	public Totodile() {
 		super("Totodile", 4, 4, MonsterElement.WATER, 29);
-		// TODO Auto-generated constructor stub
 	}
 
 	public boolean isLevelUp(Monster monster) {
-		// TODO Auto-generated method stub
 		if (monster.getName().equals("Totodile")) {
 			monster.setName("Croconaw");
 			monster.setAttack(monster.getAttack() + 2);

@@ -28,7 +28,6 @@ public class MonsterCell extends Pane {
 		setPrefHeight(100.0);
 		setPadding(new Insets(8.0));
 		this.addEventHandler(MouseEvent.MOUSE_CLICKED, new EventHandler<MouseEvent>() {
-			@Override
 			public void handle(MouseEvent e) {
 				onClickHandler();
 			}
@@ -59,5 +58,4 @@ public class MonsterCell extends Pane {
 		BackgroundImage[] bgImgA = { bgImg };
 		setBackground(new Background(bgFillA, bgImgA));
 	}
-
 }
