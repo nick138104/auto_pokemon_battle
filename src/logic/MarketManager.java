@@ -8,7 +8,7 @@ import entity.Charmander;
 import entity.Chikorita;
 import entity.Chimchar;
 import entity.Cyndaquil;
-import entity.Magikarp;
+import entity.Gyarados;
 import entity.Mudkip;
 import entity.Pikachu;
 import entity.Piplup;
@@ -89,7 +89,7 @@ public class MarketManager {
 		case 4:
 			return new Cyndaquil();
 		case 5:
-			return new Magikarp();
+			return new Gyarados();
 		case 6:
 			return new Mudkip();
 		case 7:
@@ -135,7 +135,6 @@ public class MarketManager {
 	}
 
 	public static void freezMarket() {
-		// can throw exception
 		if (Objects.isNull(selectedButton)) {
 			return;
 		}
@@ -217,9 +216,6 @@ public class MarketManager {
 	private static void updateAfterManage() {
 		updateMonster();
 		updateMarket();
-		setSelectedButton(null);
-		updateMoney();
-		MarketManager.updateTooltip();
 	}
 
 	public static void updateCombo() {
@@ -244,12 +240,11 @@ public class MarketManager {
 			}
 		}
 		updatePlantcase(plant);
-		updeteWatercase(water);
+		updateWatercase(water);
 		updateFirecase(fire);
 	}
 
 	private static void updatePlantcase(int plant) {
-		// TODO Auto-generated method stub
 		switch (plant) {
 		case 3:
 			updateAllmonster(1, 0);
@@ -265,8 +260,7 @@ public class MarketManager {
 		}
 	}
 
-	private static void updeteWatercase(int water) {
-		// TODO Auto-generated method stub
+	private static void updateWatercase(int water) {
 		switch (water) {
 		case 3:
 			updateAllmonster(1, 0);
@@ -283,7 +277,6 @@ public class MarketManager {
 	}
 
 	private static void updateFirecase(int fire) {
-		// TODO Auto-generated method stub
 		switch (fire) {
 		case 3:
 			updateAllmonster(0, 1);
@@ -312,7 +305,7 @@ public class MarketManager {
 		selectedButton = null;
 		updateMoney();
 		updateWin();
-		updateLife();
+		updateHealth();
 		updateTooltip();
 		for (int i = 0; i < 5; i++) {
 			if (Objects.nonNull(objects.get(i))) {
@@ -375,7 +368,7 @@ public class MarketManager {
 		statList.get(1).setText("Win : " + win + " / 5");
 	}
 
-	public static void updateLife() {
+	public static void updateHealth() {
 		statList.get(2).setText("Health : " + health);
 	}
 }

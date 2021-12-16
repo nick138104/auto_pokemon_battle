@@ -6,45 +6,36 @@ import javafx.scene.canvas.GraphicsContext;
 import resource.ResourceHolder;
 
 public class HitLine extends Gameobject implements IRenderable {
-	private boolean visible;
+	private boolean isVisible;
 	private Point2D pos;
 
 	public HitLine() {
 		super(-1);
-		visible = false;
+		setVisible(false);
+		setPos(new Point2D(0, 0));
 	}
 
-	@Override
 	public int getZ() {
-		// TODO Auto-generated method stub
-		return 100;
+		return 2;
 	}
 
-	@Override
 	public void draw(GraphicsContext gc) {
-		// TODO Auto-generated method stub
 		gc.drawImage(ResourceHolder.getInstance().hitline, pos.getX(), pos.getY(), 70, 70);
 	}
 
-	@Override
 	public boolean isVisible() {
-		// TODO Auto-generated method stub
-		return visible;
+		return isVisible;
 	}
 
-	public void setVisible(boolean visible) {
-		this.visible = visible;
+	public void setVisible(boolean isVisible) {
+		this.isVisible = isVisible;
 	}
 
-	@Override
 	public boolean isDead() {
-		// TODO Auto-generated method stub
 		return false;
 	}
 
-	@Override
 	public String toString() {
-		// TODO Auto-generated method stub
 		return null;
 	}
 

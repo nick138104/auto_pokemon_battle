@@ -8,7 +8,6 @@ public class MenuBox extends VBox {
 
 	public MenuBox(MenuItem... items) {
 		getChildren().add(createSeperator());
-
 		for (MenuItem item : items) {
 			getChildren().addAll(item, createSeperator());
 		}
@@ -20,5 +19,4 @@ public class MenuBox extends VBox {
 		sep.setStroke(Color.BLUE);
 		return sep;
 	}
-
 }

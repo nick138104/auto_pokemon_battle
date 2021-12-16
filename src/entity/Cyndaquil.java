@@ -7,11 +7,9 @@ public class Cyndaquil extends Monster {
 
 	public Cyndaquil() {
 		super("Cyndaquil", 5, 3, MonsterElement.FIRE, 12);
-		// TODO Auto-generated constructor stub
 	}
 
 	public boolean isLevelUp(Monster monster) {
-		// TODO Auto-generated method stub
 		if (monster.getName().equals("Cyndaquil")) {
 			monster.setName("Quilava");
 			monster.setAttack(monster.getAttack() + 2);

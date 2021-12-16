@@ -3,15 +3,13 @@ package entity;
 import entity.base.Monster;
 import entity.base.MonsterElement;
 
-public class Torchic extends Monster{
+public class Torchic extends Monster {
 
 	public Torchic() {
 		super("Torchic", 5, 5, MonsterElement.FIRE, 26);
-		// TODO Auto-generated constructor stub
 	}
 
 	public boolean isLevelUp(Monster monster) {
-		// TODO Auto-generated method stub
 		if (monster.getName().equals("Torchic")) {
 			monster.setName("Combusken");
 			monster.setAttack(monster.getAttack() + 2);

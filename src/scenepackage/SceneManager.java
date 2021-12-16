@@ -80,9 +80,8 @@ public class SceneManager {
 	private Parent createContent3() {
 		StackPane root = new StackPane();
 		Canvas canvas = new Canvas(1050, 600);
-		Animation animation = new Animation();
+		this.animation = new Animation();
 		graphicsContext = canvas.getGraphicsContext2D();
-		this.animation = animation;
 		root.getChildren().add(canvas);
 		return root;
 	}

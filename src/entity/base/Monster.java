@@ -13,7 +13,7 @@ public class Monster extends Gameobject implements IRenderable {
 	private int lifepoint;
 	private MonsterElement element;
 	private Point2D pos;
-	private boolean visible;
+	private boolean isVisible;
 
 	public Monster(String name, int attack, int lifepoint, MonsterElement element, int id) {
 		super(id);
@@ -21,8 +21,8 @@ public class Monster extends Gameobject implements IRenderable {
 		setAttack(attack);
 		setLifepoint(lifepoint);
 		setElement(element);
-		pos = new Point2D(0, 0);
-		visible = true;
+		setPos(new Point2D(0, 0));
+		setVisible(true);
 	}
 
 	public void attack(Monster mon) {
@@ -35,7 +35,6 @@ public class Monster extends Gameobject implements IRenderable {
 	}
 
 	public void move(int side) {
-		// TODO Auto-generated method stub
 		double pos_x = pos.getX() + side * 9.5;
 		if (side == 1) {
 			if (pos_x > BattleUtils.POS_CENTER_LEFT) {
@@ -49,31 +48,28 @@ public class Monster extends Gameobject implements IRenderable {
 		pos = new Point2D(pos_x, pos.getY());
 	}
 
-	@Override
 	public int getZ() {
-		// TODO Auto-generated method stub
 		return 1;
 	}
 
-	@Override
 	public void draw(GraphicsContext gc) {
-		// TODO Auto-generated method stub
 		gc.drawImage(ResourceHolder.getInstance().monster.get(getId()), pos.getX(), pos.getY(), 70, 70);
 	}
 
-	@Override
 	public boolean isVisible() {
-		// TODO Auto-generated method stub
-		return visible;
+		return isVisible;
 	}
 
 	public void setVisible(boolean visible) {
-		this.visible = visible;
+		this.isVisible = visible;
 	}
 
-	@Override
 	public boolean isDead() {
 		return lifepoint <= 0;
+	}
+
+	public boolean isLevelUp(Monster monster) {
+		return false;
 	}
 
 	public String getName() {
@@ -108,10 +104,6 @@ public class Monster extends Gameobject implements IRenderable {
 		this.element = element;
 	}
 
-	public boolean isLevelUp(Monster monster) {
-		return false;
-	}
-
 	public Point2D getPos() {
 		return pos;
 	}
@@ -120,12 +112,9 @@ public class Monster extends Gameobject implements IRenderable {
 		this.pos = pos;
 	}
 
-	@Override
 	public String toString() {
-		// TODO Auto-generated method stub
 		String monster = "Name : " + getName() + "\nAttack : " + getAttack() + "\nLifepoint : " + lifepoint
 				+ "\nElement : " + getElement();
 		return monster;
 	}
-
 }

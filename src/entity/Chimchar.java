@@ -7,11 +7,9 @@ public class Chimchar extends Monster {
 
 	public Chimchar() {
 		super("Chimchar", 7, 5, MonsterElement.FIRE, 9);
-		// TODO Auto-generated constructor stub
 	}
 
 	public boolean isLevelUp(Monster monster) {
-		// TODO Auto-generated method stub
 		if (monster.getName().equals("Chimchar")) {
 			monster.setName("Monferno");
 			monster.setAttack(monster.getAttack() + 1);
@@ -27,5 +25,4 @@ public class Chimchar extends Monster {
 		}
 		return false;
 	}
-
 }

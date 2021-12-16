@@ -41,7 +41,6 @@ public class MenuItem extends StackPane {
 		setOnMousePressed(event -> {
 			bg.setFill(Color.DARKVIOLET);
 		});
-
 		setOnMouseReleased(event -> {
 			bg.setFill(gradient);
 			if (name.equals("PLAY")) {
@@ -59,6 +58,5 @@ public class MenuItem extends StackPane {
 				Main.primaryStage.close();
 			}
 		});
-
 	}
 }

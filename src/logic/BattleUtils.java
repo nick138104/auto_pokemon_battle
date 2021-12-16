@@ -7,9 +7,9 @@ import java.util.Objects;
 import java.util.Random;
 
 import animation.Animation;
-import entity.base.Gameobject;
 import entity.base.HitLine;
 import entity.base.Monster;
+import interfacepackage.IRenderable;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.geometry.Point2D;
@@ -24,7 +24,7 @@ public class BattleUtils {
 	private int player;
 	private int enemy;
 	private int count;
-	private boolean fightover;
+	private boolean isFightover;
 	public static int left_attack;
 	public static int left_health;
 	public static int right_attack;
@@ -33,7 +33,6 @@ public class BattleUtils {
 	public static final int POS_CENTER_RIGHT = 535;
 
 	public void startBattle() {
-		// TODO Auto-generated method stub
 		player = 0;
 		enemy = 0;
 		count = 0;
@@ -41,7 +40,7 @@ public class BattleUtils {
 		left_health = -1;
 		right_attack = -1;
 		right_health = -1;
-		fightover = false;
+		isFightover = false;
 		RenderableHolder.getInstance().getEntities().clear();
 		playerMonster.clear();
 		enemyMonster.clear();
@@ -77,7 +76,7 @@ public class BattleUtils {
 		addNewObject(hitline2);
 	}
 
-	protected void addNewObject(Gameobject object) {
+	private void addNewObject(IRenderable object) {
 		if (object instanceof Monster) {
 			Monster mon = (Monster) object;
 			if (mon.getPos().getX() > 500) {
@@ -85,18 +84,15 @@ public class BattleUtils {
 			} else {
 				playerMonster.add(mon);
 			}
-			RenderableHolder.getInstance().add(mon);
 		} else {
 			HitLine hitline = (HitLine) object;
 			hitlineContainer.add(hitline);
-			RenderableHolder.getInstance().add(hitline);
 		}
-
+		RenderableHolder.getInstance().add(object);
 	}
 
 	public void logicUpdate() {
-		// TODO Auto-generated method stub
-		if (fightover) {
+		if (isFightover) {
 			Animation.endBattleSence();
 			return;
 		}
@@ -110,13 +106,13 @@ public class BattleUtils {
 			if (!playerMonster.isEmpty()) {
 				if (enemyMonster.isEmpty()) {
 					MarketManager.win += 1;
-					fightover = true;
+					isFightover = true;
 				}
 			} else {
 				if (!enemyMonster.isEmpty()) {
 					MarketManager.health -= 1;
 				}
-				fightover = true;
+				isFightover = true;
 			}
 			MarketManager.updateMarket();
 			return;

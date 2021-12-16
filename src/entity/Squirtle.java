@@ -7,11 +7,9 @@ public class Squirtle extends Monster {
 
 	public Squirtle() {
 		super("Squirtle", 2, 4, MonsterElement.WATER, 23);
-		// TODO Auto-generated constructor stub
 	}
 
 	public boolean isLevelUp(Monster monster) {
-		// TODO Auto-generated method stub
 		if (monster.getName().equals("Squirtle")) {
 			monster.setName("Wartortle");
 			monster.setAttack(monster.getAttack() + 3);

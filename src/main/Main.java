@@ -18,6 +18,7 @@ public class Main extends Application {
 		primaryStage.setTitle("Auto_Pokemon_Battle");
 		primaryStage.setResizable(false);
 		primaryStage.setScene(SceneManager.getInstance().menu_scene);
+		primaryStage.getIcons().add(ResourceHolder.getInstance().background.get(0));
 		primaryStage.show();
 	}
 

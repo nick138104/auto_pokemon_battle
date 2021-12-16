@@ -3,15 +3,13 @@ package entity;
 import entity.base.Monster;
 import entity.base.MonsterElement;
 
-public class Piplup extends Monster{
+public class Piplup extends Monster {
 
 	public Piplup() {
 		super("Piplup", 6, 6, MonsterElement.WATER, 20);
-		// TODO Auto-generated constructor stub
 	}
 
 	public boolean isLevelUp(Monster monster) {
-		// TODO Auto-generated method stub
 		if (monster.getName().equals("Piplup")) {
 			monster.setName("Prinplup");
 			monster.setAttack(monster.getAttack() + 1);
